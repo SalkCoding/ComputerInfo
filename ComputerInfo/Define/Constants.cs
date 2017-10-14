@@ -38,7 +38,9 @@ namespace ComputerInfo.Define
         public static String REG_BIOS_SYSTEM_MANUFACTURER = "SystemManufacturer";
         public static String REG_BIOS_SYSTEM_VERSION = "SystemVersion";
         //MEMORY WMI
-
+        public static String WMI_RAM = "select * from  Win32_PhysicalMemory";
+        public static String WMI_RAM_SPEED = "Speed";
+        public static String WMI_RAM_VOLTAGE = "ConfiguredVoltage";
         //DISK WMI
 
         //GPU WMI

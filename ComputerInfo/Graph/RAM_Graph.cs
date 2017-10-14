@@ -21,7 +21,7 @@ namespace ComputerInfo.Graph
             path.Style = MetroTrackerPath.PathStyle.Memory;
         }
 
-        public void RefreshGraph(MetroTracker trackbar, GCircularProgress Ram_Physical_Usage, GCircularProgress Ram_Virtual_Usage)
+        public void RefreshGraph(MetroTracker trackbar, GCircularProgress Ram_Physical_Usage, GCircularProgress Ram_Virtual_Usage, MetroLabel Ram_Physical_Used_Size, MetroLabel Ram_Virtual_Used_Size)
         {
             UInt64 Physical_Available = WMI.Memory.RAM_Available_Physical;
             UInt64 Physical_Total = WMI.Memory.RAM_Pysical_Size;
@@ -32,6 +32,8 @@ namespace ComputerInfo.Graph
             path.Add((Int32)Physical_Percentage);
             Ram_Physical_Usage.Value = (Int32)Physical_Percentage;
             Ram_Virtual_Usage.Value = (Int32)Virtual_Percentage;
+            Ram_Physical_Used_Size.Text = String.Format("{0:F2} GB in use", ((WMI.Memory.RAM_Pysical_Size - WMI.Memory.RAM_Available_Physical) / 1024f / 1024f / 1024f));
+            Ram_Virtual_Used_Size.Text = String.Format("{0:F2} GB in use", ((WMI.Memory.RAM_Virtual_Size - WMI.Memory.RAM_Available_Virtual) / 1024f / 1024f / 1024f));
         }
     }
 }

@@ -36,10 +36,10 @@ namespace ComputerInfo.Define
             MetroLabel CPU_Thread_Label)
         {
             CPU_Name_Label.Text = WMI.CPU.CPU_Name;
-            CPU_Current_Clock_Label.Text = (WMI.CPU.CPU_Current_Clock / 1000).ToString("#.##") + "Ghz";
-            CPU_Voltage_Label.Text = WMI.CPU.CPU_Voltage.ToString() + "V";
-            CPU_L2Cache_Label.Text = (WMI.CPU.CPU_L2Cache_Size / 1024).ToString() + "Mb";
-            CPU_L3Cache_Label.Text = (WMI.CPU.CPU_L3Cache_Size / 1024).ToString() + "Mb";
+            CPU_Current_Clock_Label.Text = String.Format("{0:F2} Ghz", (WMI.CPU.CPU_Current_Clock / 1000f));
+            CPU_Voltage_Label.Text = String.Format("{0:F2} V", WMI.CPU.CPU_Voltage);
+            CPU_L2Cache_Label.Text = String.Format("{0:F2} Mb", (WMI.CPU.CPU_L2Cache_Size / 1024f));
+            CPU_L3Cache_Label.Text = String.Format("{0:F2} Mb", (WMI.CPU.CPU_L3Cache_Size / 1024f));
             CPU_Core_Label.Text = WMI.CPU.CPU_Core_Count.ToString();
             CPU_Thread_Label.Text = WMI.CPU.CPU_Thread_Count.ToString();
         }
@@ -85,9 +85,17 @@ namespace ComputerInfo.Define
         }
 
         public static void PrintRAMInfomation(
-            )
+            MetroLabel RAM_Speed,
+            MetroLabel RAM_Voltage,
+            MetroLabel RAM_Total_Physical_Size,
+            MetroLabel RAM_Total_Virtual_Size)
         {
-
+            Double Pysical_Size = (WMI.Memory.RAM_Pysical_Size / 1024f / 1024f / 1024f);
+            Double Virtual_Size = (WMI.Memory.RAM_Pysical_Size / 1024f / 1024f / 1024f);
+            RAM_Speed.Text = String.Format("{0} Mhz",WMI.Memory.RAM_Speed);
+            RAM_Voltage.Text = String.Format("{0} V",WMI.Memory.RAM_Voltage);
+            RAM_Total_Physical_Size.Text = String.Format("{0:F2} GB", Pysical_Size);
+            RAM_Total_Virtual_Size.Text = String.Format("{0:F2} GB", Virtual_Size);
         }
 
         public static void PrintGPUInformation()

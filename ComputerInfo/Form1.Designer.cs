@@ -35,10 +35,8 @@
             this.GraphicCardTab = new System.Windows.Forms.TabPage();
             this.DiskTab = new System.Windows.Forms.TabPage();
             this.MemoryTab = new System.Windows.Forms.TabPage();
-            this.metroLabel22 = new MetroSuite.MetroLabel();
-            this.metroLabel23 = new MetroSuite.MetroLabel();
-            this.metroLabel24 = new MetroSuite.MetroLabel();
-            this.metroLabel25 = new MetroSuite.MetroLabel();
+            this.RAM_Virtual_Progress = new GChartLib.GCircularProgress();
+            this.metroLabel26 = new MetroSuite.MetroLabel();
             this.RAM_Refresh_Speed = new MetroSuite.MetroComboBox();
             this.metroLabel14 = new MetroSuite.MetroLabel();
             this.RAM_Physical_Progress = new GChartLib.GCircularProgress();
@@ -65,7 +63,7 @@
             this.CPU_Clock = new MetroSuite.MetroLabel();
             this.CPUName = new MetroSuite.MetroLabel();
             this.metroLabel1 = new MetroSuite.MetroLabel();
-            this.RefreshSwitch = new MetroSuite.MetroSwitch();
+            this.Refresh_Switch = new MetroSuite.MetroSwitch();
             this.CPU_Tracker = new MetroSuite.MetroTracker();
             this.metroTabControl1 = new MetroSuite.MetroTabControl();
             this.BiosTab = new System.Windows.Forms.TabPage();
@@ -90,8 +88,16 @@
             this.BIOS_Logo = new System.Windows.Forms.WebBrowser();
             this.OS_Page = new System.Windows.Forms.TabPage();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.RAM_Virtual_Progress = new GChartLib.GCircularProgress();
-            this.metroLabel26 = new MetroSuite.MetroLabel();
+            this.metroLabel27 = new MetroSuite.MetroLabel();
+            this.metroLabel28 = new MetroSuite.MetroLabel();
+            this.metroLabel29 = new MetroSuite.MetroLabel();
+            this.metroLabel30 = new MetroSuite.MetroLabel();
+            this.RAM_Physical_Size = new MetroSuite.MetroLabel();
+            this.RAM_Virtual_Size = new MetroSuite.MetroLabel();
+            this.RAM_Speed = new MetroSuite.MetroLabel();
+            this.RAM_Voltage = new MetroSuite.MetroLabel();
+            this.RAM_Physical_Used = new MetroSuite.MetroLabel();
+            this.RAM_Virtual_Used = new MetroSuite.MetroLabel();
             this.MemoryTab.SuspendLayout();
             this.CPUTab.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
@@ -133,12 +139,18 @@
             // 
             // MemoryTab
             // 
+            this.MemoryTab.Controls.Add(this.RAM_Virtual_Used);
+            this.MemoryTab.Controls.Add(this.RAM_Physical_Used);
+            this.MemoryTab.Controls.Add(this.RAM_Voltage);
+            this.MemoryTab.Controls.Add(this.RAM_Speed);
+            this.MemoryTab.Controls.Add(this.RAM_Virtual_Size);
+            this.MemoryTab.Controls.Add(this.RAM_Physical_Size);
+            this.MemoryTab.Controls.Add(this.metroLabel30);
+            this.MemoryTab.Controls.Add(this.metroLabel29);
+            this.MemoryTab.Controls.Add(this.metroLabel28);
+            this.MemoryTab.Controls.Add(this.metroLabel27);
             this.MemoryTab.Controls.Add(this.RAM_Virtual_Progress);
             this.MemoryTab.Controls.Add(this.metroLabel26);
-            this.MemoryTab.Controls.Add(this.metroLabel22);
-            this.MemoryTab.Controls.Add(this.metroLabel23);
-            this.MemoryTab.Controls.Add(this.metroLabel24);
-            this.MemoryTab.Controls.Add(this.metroLabel25);
             this.MemoryTab.Controls.Add(this.RAM_Refresh_Speed);
             this.MemoryTab.Controls.Add(this.metroLabel14);
             this.MemoryTab.Controls.Add(this.RAM_Physical_Progress);
@@ -154,45 +166,28 @@
             this.MemoryTab.Text = "Memory";
             this.MemoryTab.UseVisualStyleBackColor = true;
             // 
-            // metroLabel22
+            // RAM_Virtual_Progress
             // 
-            this.metroLabel22.AutoSize = true;
-            this.metroLabel22.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel22.Location = new System.Drawing.Point(138, 520);
-            this.metroLabel22.Name = "metroLabel22";
-            this.metroLabel22.Size = new System.Drawing.Size(17, 21);
-            this.metroLabel22.TabIndex = 31;
-            this.metroLabel22.Text = "?";
+            this.RAM_Virtual_Progress.CircleColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RAM_Virtual_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
+            this.RAM_Virtual_Progress.ForeColor = System.Drawing.Color.White;
+            this.RAM_Virtual_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(241)))), ((int)(((byte)(68)))), ((int)(((byte)(224)))));
+            this.RAM_Virtual_Progress.Location = new System.Drawing.Point(170, 359);
+            this.RAM_Virtual_Progress.Name = "RAM_Virtual_Progress";
+            this.RAM_Virtual_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RAM_Virtual_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(18)))), ((int)(((byte)(174)))));
+            this.RAM_Virtual_Progress.Size = new System.Drawing.Size(100, 100);
+            this.RAM_Virtual_Progress.TabIndex = 33;
             // 
-            // metroLabel23
+            // metroLabel26
             // 
-            this.metroLabel23.AutoSize = true;
-            this.metroLabel23.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel23.Location = new System.Drawing.Point(6, 520);
-            this.metroLabel23.Name = "metroLabel23";
-            this.metroLabel23.Size = new System.Drawing.Size(126, 21);
-            this.metroLabel23.TabIndex = 30;
-            this.metroLabel23.Text = "Current Voltage :";
-            // 
-            // metroLabel24
-            // 
-            this.metroLabel24.AutoSize = true;
-            this.metroLabel24.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel24.Location = new System.Drawing.Point(6, 480);
-            this.metroLabel24.Name = "metroLabel24";
-            this.metroLabel24.Size = new System.Drawing.Size(59, 21);
-            this.metroLabel24.TabIndex = 29;
-            this.metroLabel24.Text = "Clock : ";
-            // 
-            // metroLabel25
-            // 
-            this.metroLabel25.AutoSize = true;
-            this.metroLabel25.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel25.Location = new System.Drawing.Point(63, 480);
-            this.metroLabel25.Name = "metroLabel25";
-            this.metroLabel25.Size = new System.Drawing.Size(17, 21);
-            this.metroLabel25.TabIndex = 28;
-            this.metroLabel25.Text = "?";
+            this.metroLabel26.AutoSize = true;
+            this.metroLabel26.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroLabel26.Location = new System.Drawing.Point(166, 335);
+            this.metroLabel26.Name = "metroLabel26";
+            this.metroLabel26.Size = new System.Drawing.Size(141, 21);
+            this.metroLabel26.TabIndex = 32;
+            this.metroLabel26.Text = "Virtual RAM Usage";
             // 
             // RAM_Refresh_Speed
             // 
@@ -234,7 +229,7 @@
             this.RAM_Physical_Progress.CircleColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RAM_Physical_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
             this.RAM_Physical_Progress.ForeColor = System.Drawing.Color.White;
-            this.RAM_Physical_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.RAM_Physical_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(241)))), ((int)(((byte)(68)))), ((int)(((byte)(224)))));
             this.RAM_Physical_Progress.Location = new System.Drawing.Point(10, 359);
             this.RAM_Physical_Progress.Name = "RAM_Physical_Progress";
             this.RAM_Physical_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -310,7 +305,7 @@
             this.CPUTab.Controls.Add(this.CPU_Clock);
             this.CPUTab.Controls.Add(this.CPUName);
             this.CPUTab.Controls.Add(this.metroLabel1);
-            this.CPUTab.Controls.Add(this.RefreshSwitch);
+            this.CPUTab.Controls.Add(this.Refresh_Switch);
             this.CPUTab.Controls.Add(this.CPU_Tracker);
             this.CPUTab.Location = new System.Drawing.Point(124, 4);
             this.CPUTab.Name = "CPUTab";
@@ -374,9 +369,9 @@
             this.CPU_THREAD.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.CPU_THREAD.Location = new System.Drawing.Point(608, 520);
             this.CPU_THREAD.Name = "CPU_THREAD";
-            this.CPU_THREAD.Size = new System.Drawing.Size(17, 21);
+            this.CPU_THREAD.Size = new System.Drawing.Size(68, 21);
             this.CPU_THREAD.TabIndex = 17;
-            this.CPU_THREAD.Text = "?";
+            this.CPU_THREAD.Text = "Unknow";
             // 
             // metroLabel9
             // 
@@ -394,9 +389,9 @@
             this.CPU_CORE.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.CPU_CORE.Location = new System.Drawing.Point(593, 480);
             this.CPU_CORE.Name = "CPU_CORE";
-            this.CPU_CORE.Size = new System.Drawing.Size(17, 21);
+            this.CPU_CORE.Size = new System.Drawing.Size(68, 21);
             this.CPU_CORE.TabIndex = 15;
-            this.CPU_CORE.Text = "?";
+            this.CPU_CORE.Text = "Unknow";
             // 
             // metroLabel7
             // 
@@ -414,9 +409,9 @@
             this.CPU_L3CACHE.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.CPU_L3CACHE.Location = new System.Drawing.Point(532, 440);
             this.CPU_L3CACHE.Name = "CPU_L3CACHE";
-            this.CPU_L3CACHE.Size = new System.Drawing.Size(17, 21);
+            this.CPU_L3CACHE.Size = new System.Drawing.Size(68, 21);
             this.CPU_L3CACHE.TabIndex = 13;
-            this.CPU_L3CACHE.Text = "?";
+            this.CPU_L3CACHE.Text = "Unknow";
             // 
             // CPU_L2CACHE
             // 
@@ -424,9 +419,9 @@
             this.CPU_L2CACHE.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.CPU_L2CACHE.Location = new System.Drawing.Point(532, 400);
             this.CPU_L2CACHE.Name = "CPU_L2CACHE";
-            this.CPU_L2CACHE.Size = new System.Drawing.Size(17, 21);
+            this.CPU_L2CACHE.Size = new System.Drawing.Size(68, 21);
             this.CPU_L2CACHE.TabIndex = 12;
-            this.CPU_L2CACHE.Text = "?";
+            this.CPU_L2CACHE.Text = "Unknow";
             // 
             // metroLabel6
             // 
@@ -454,9 +449,9 @@
             this.CPU_Voltage.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.CPU_Voltage.Location = new System.Drawing.Point(138, 520);
             this.CPU_Voltage.Name = "CPU_Voltage";
-            this.CPU_Voltage.Size = new System.Drawing.Size(17, 21);
+            this.CPU_Voltage.Size = new System.Drawing.Size(68, 21);
             this.CPU_Voltage.TabIndex = 9;
-            this.CPU_Voltage.Text = "?";
+            this.CPU_Voltage.Text = "Unknow";
             // 
             // metroLabel4
             // 
@@ -494,9 +489,9 @@
             this.CPU_Clock.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.CPU_Clock.Location = new System.Drawing.Point(63, 480);
             this.CPU_Clock.Name = "CPU_Clock";
-            this.CPU_Clock.Size = new System.Drawing.Size(17, 21);
+            this.CPU_Clock.Size = new System.Drawing.Size(68, 21);
             this.CPU_Clock.TabIndex = 4;
-            this.CPU_Clock.Text = "?";
+            this.CPU_Clock.Text = "Unknow";
             // 
             // CPUName
             // 
@@ -519,21 +514,21 @@
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Auto Refresh";
             // 
-            // RefreshSwitch
+            // Refresh_Switch
             // 
-            this.RefreshSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.RefreshSwitch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
-            this.RefreshSwitch.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.RefreshSwitch.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.RefreshSwitch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RefreshSwitch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.RefreshSwitch.Location = new System.Drawing.Point(136, 27);
-            this.RefreshSwitch.Name = "RefreshSwitch";
-            this.RefreshSwitch.Size = new System.Drawing.Size(75, 23);
-            this.RefreshSwitch.SwitchColor = System.Drawing.Color.White;
-            this.RefreshSwitch.TabIndex = 1;
-            this.RefreshSwitch.Text = "metroSwitch1";
-            this.RefreshSwitch.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.RefreshSwitch_CheckedChanged);
+            this.Refresh_Switch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Refresh_Switch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.Refresh_Switch.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.Refresh_Switch.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.Refresh_Switch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Refresh_Switch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.Refresh_Switch.Location = new System.Drawing.Point(136, 27);
+            this.Refresh_Switch.Name = "Refresh_Switch";
+            this.Refresh_Switch.Size = new System.Drawing.Size(75, 23);
+            this.Refresh_Switch.SwitchColor = System.Drawing.Color.White;
+            this.Refresh_Switch.TabIndex = 1;
+            this.Refresh_Switch.Text = "metroSwitch1";
+            this.Refresh_Switch.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.RefreshSwitch_CheckedChanged);
             // 
             // CPU_Tracker
             // 
@@ -616,9 +611,9 @@
             this.BIOS_System_Product_Name.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BIOS_System_Product_Name.Location = new System.Drawing.Point(658, 260);
             this.BIOS_System_Product_Name.Name = "BIOS_System_Product_Name";
-            this.BIOS_System_Product_Name.Size = new System.Drawing.Size(17, 21);
+            this.BIOS_System_Product_Name.Size = new System.Drawing.Size(68, 21);
             this.BIOS_System_Product_Name.TabIndex = 21;
-            this.BIOS_System_Product_Name.Text = "?";
+            this.BIOS_System_Product_Name.Text = "Unknow";
             // 
             // BIOS_Release_Date
             // 
@@ -626,9 +621,9 @@
             this.BIOS_Release_Date.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BIOS_Release_Date.Location = new System.Drawing.Point(156, 380);
             this.BIOS_Release_Date.Name = "BIOS_Release_Date";
-            this.BIOS_Release_Date.Size = new System.Drawing.Size(17, 21);
+            this.BIOS_Release_Date.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Release_Date.TabIndex = 20;
-            this.BIOS_Release_Date.Text = "?";
+            this.BIOS_Release_Date.Text = "Unknow";
             // 
             // BIOS_Base_Board_Product
             // 
@@ -636,9 +631,9 @@
             this.BIOS_Base_Board_Product.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BIOS_Base_Board_Product.Location = new System.Drawing.Point(164, 300);
             this.BIOS_Base_Board_Product.Name = "BIOS_Base_Board_Product";
-            this.BIOS_Base_Board_Product.Size = new System.Drawing.Size(17, 21);
+            this.BIOS_Base_Board_Product.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Base_Board_Product.TabIndex = 19;
-            this.BIOS_Base_Board_Product.Text = "?";
+            this.BIOS_Base_Board_Product.Text = "Unknow";
             // 
             // BIOS_System_Version
             // 
@@ -646,9 +641,9 @@
             this.BIOS_System_Version.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BIOS_System_Version.Location = new System.Drawing.Point(610, 340);
             this.BIOS_System_Version.Name = "BIOS_System_Version";
-            this.BIOS_System_Version.Size = new System.Drawing.Size(17, 21);
+            this.BIOS_System_Version.Size = new System.Drawing.Size(68, 21);
             this.BIOS_System_Version.TabIndex = 18;
-            this.BIOS_System_Version.Text = "?";
+            this.BIOS_System_Version.Text = "Unknow";
             // 
             // BIOS_Version
             // 
@@ -656,9 +651,9 @@
             this.BIOS_Version.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BIOS_Version.Location = new System.Drawing.Point(119, 420);
             this.BIOS_Version.Name = "BIOS_Version";
-            this.BIOS_Version.Size = new System.Drawing.Size(17, 21);
+            this.BIOS_Version.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Version.TabIndex = 17;
-            this.BIOS_Version.Text = "?";
+            this.BIOS_Version.Text = "Unknow";
             // 
             // BIOS_Vendor
             // 
@@ -666,9 +661,9 @@
             this.BIOS_Vendor.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BIOS_Vendor.Location = new System.Drawing.Point(117, 460);
             this.BIOS_Vendor.Name = "BIOS_Vendor";
-            this.BIOS_Vendor.Size = new System.Drawing.Size(17, 21);
+            this.BIOS_Vendor.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Vendor.TabIndex = 16;
-            this.BIOS_Vendor.Text = "?";
+            this.BIOS_Vendor.Text = "Unknow";
             // 
             // BIOS_System_Manufacturer
             // 
@@ -676,9 +671,9 @@
             this.BIOS_System_Manufacturer.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BIOS_System_Manufacturer.Location = new System.Drawing.Point(652, 300);
             this.BIOS_System_Manufacturer.Name = "BIOS_System_Manufacturer";
-            this.BIOS_System_Manufacturer.Size = new System.Drawing.Size(17, 21);
+            this.BIOS_System_Manufacturer.Size = new System.Drawing.Size(68, 21);
             this.BIOS_System_Manufacturer.TabIndex = 15;
-            this.BIOS_System_Manufacturer.Text = "?";
+            this.BIOS_System_Manufacturer.Text = "Unknow";
             // 
             // BIOS_Base_Board_Version
             // 
@@ -686,9 +681,9 @@
             this.BIOS_Base_Board_Version.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BIOS_Base_Board_Version.Location = new System.Drawing.Point(162, 340);
             this.BIOS_Base_Board_Version.Name = "BIOS_Base_Board_Version";
-            this.BIOS_Base_Board_Version.Size = new System.Drawing.Size(17, 21);
+            this.BIOS_Base_Board_Version.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Base_Board_Version.TabIndex = 14;
-            this.BIOS_Base_Board_Version.Text = "?";
+            this.BIOS_Base_Board_Version.Text = "Unknow";
             // 
             // BIOS_Base_Board_Manufacturer
             // 
@@ -696,9 +691,9 @@
             this.BIOS_Base_Board_Manufacturer.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BIOS_Base_Board_Manufacturer.Location = new System.Drawing.Point(204, 260);
             this.BIOS_Base_Board_Manufacturer.Name = "BIOS_Base_Board_Manufacturer";
-            this.BIOS_Base_Board_Manufacturer.Size = new System.Drawing.Size(17, 21);
+            this.BIOS_Base_Board_Manufacturer.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Base_Board_Manufacturer.TabIndex = 13;
-            this.BIOS_Base_Board_Manufacturer.Text = "?";
+            this.BIOS_Base_Board_Manufacturer.Text = "Unknow";
             // 
             // metroLabel20
             // 
@@ -818,28 +813,105 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // RAM_Virtual_Progress
+            // metroLabel27
             // 
-            this.RAM_Virtual_Progress.CircleColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RAM_Virtual_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
-            this.RAM_Virtual_Progress.ForeColor = System.Drawing.Color.White;
-            this.RAM_Virtual_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.RAM_Virtual_Progress.Location = new System.Drawing.Point(170, 359);
-            this.RAM_Virtual_Progress.Name = "RAM_Virtual_Progress";
-            this.RAM_Virtual_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RAM_Virtual_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(18)))), ((int)(((byte)(174)))));
-            this.RAM_Virtual_Progress.Size = new System.Drawing.Size(100, 100);
-            this.RAM_Virtual_Progress.TabIndex = 33;
+            this.metroLabel27.AutoSize = true;
+            this.metroLabel27.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroLabel27.Location = new System.Drawing.Point(380, 430);
+            this.metroLabel27.Name = "metroLabel27";
+            this.metroLabel27.Size = new System.Drawing.Size(204, 21);
+            this.metroLabel27.TabIndex = 34;
+            this.metroLabel27.Text = "Total Physical Memory Size :";
             // 
-            // metroLabel26
+            // metroLabel28
             // 
-            this.metroLabel26.AutoSize = true;
-            this.metroLabel26.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel26.Location = new System.Drawing.Point(166, 335);
-            this.metroLabel26.Name = "metroLabel26";
-            this.metroLabel26.Size = new System.Drawing.Size(141, 21);
-            this.metroLabel26.TabIndex = 32;
-            this.metroLabel26.Text = "Virtual RAM Usage";
+            this.metroLabel28.AutoSize = true;
+            this.metroLabel28.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroLabel28.Location = new System.Drawing.Point(380, 470);
+            this.metroLabel28.Name = "metroLabel28";
+            this.metroLabel28.Size = new System.Drawing.Size(194, 21);
+            this.metroLabel28.TabIndex = 35;
+            this.metroLabel28.Text = "Total Virtual Memory Size :";
+            // 
+            // metroLabel29
+            // 
+            this.metroLabel29.AutoSize = true;
+            this.metroLabel29.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroLabel29.Location = new System.Drawing.Point(380, 350);
+            this.metroLabel29.Name = "metroLabel29";
+            this.metroLabel29.Size = new System.Drawing.Size(129, 21);
+            this.metroLabel29.TabIndex = 36;
+            this.metroLabel29.Text = "RAM Frequently :";
+            // 
+            // metroLabel30
+            // 
+            this.metroLabel30.AutoSize = true;
+            this.metroLabel30.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroLabel30.Location = new System.Drawing.Point(380, 390);
+            this.metroLabel30.Name = "metroLabel30";
+            this.metroLabel30.Size = new System.Drawing.Size(107, 21);
+            this.metroLabel30.TabIndex = 37;
+            this.metroLabel30.Text = "RAM Voltage :";
+            // 
+            // RAM_Physical_Size
+            // 
+            this.RAM_Physical_Size.AutoSize = true;
+            this.RAM_Physical_Size.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Physical_Size.Location = new System.Drawing.Point(590, 430);
+            this.RAM_Physical_Size.Name = "RAM_Physical_Size";
+            this.RAM_Physical_Size.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Physical_Size.TabIndex = 39;
+            this.RAM_Physical_Size.Text = "Unknow";
+            // 
+            // RAM_Virtual_Size
+            // 
+            this.RAM_Virtual_Size.AutoSize = true;
+            this.RAM_Virtual_Size.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Virtual_Size.Location = new System.Drawing.Point(580, 470);
+            this.RAM_Virtual_Size.Name = "RAM_Virtual_Size";
+            this.RAM_Virtual_Size.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Virtual_Size.TabIndex = 40;
+            this.RAM_Virtual_Size.Text = "Unknow";
+            // 
+            // RAM_Speed
+            // 
+            this.RAM_Speed.AutoSize = true;
+            this.RAM_Speed.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Speed.Location = new System.Drawing.Point(512, 350);
+            this.RAM_Speed.Name = "RAM_Speed";
+            this.RAM_Speed.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Speed.TabIndex = 41;
+            this.RAM_Speed.Text = "Unknow";
+            // 
+            // RAM_Voltage
+            // 
+            this.RAM_Voltage.AutoSize = true;
+            this.RAM_Voltage.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Voltage.Location = new System.Drawing.Point(492, 390);
+            this.RAM_Voltage.Name = "RAM_Voltage";
+            this.RAM_Voltage.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Voltage.TabIndex = 42;
+            this.RAM_Voltage.Text = "Unknow";
+            // 
+            // RAM_Physical_Used
+            // 
+            this.RAM_Physical_Used.AutoSize = true;
+            this.RAM_Physical_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Physical_Used.Location = new System.Drawing.Point(6, 462);
+            this.RAM_Physical_Used.Name = "RAM_Physical_Used";
+            this.RAM_Physical_Used.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Physical_Used.TabIndex = 43;
+            this.RAM_Physical_Used.Text = "Unknow";
+            // 
+            // RAM_Virtual_Used
+            // 
+            this.RAM_Virtual_Used.AutoSize = true;
+            this.RAM_Virtual_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Virtual_Used.Location = new System.Drawing.Point(166, 462);
+            this.RAM_Virtual_Used.Name = "RAM_Virtual_Used";
+            this.RAM_Virtual_Used.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Virtual_Used.TabIndex = 44;
+            this.RAM_Virtual_Used.Text = "Unknow";
             // 
             // Form1
             // 
@@ -877,7 +949,7 @@
         private MetroSuite.MetroLabel CPU_Clock;
         private MetroSuite.MetroLabel CPUName;
         private MetroSuite.MetroLabel metroLabel1;
-        private MetroSuite.MetroSwitch RefreshSwitch;
+        private MetroSuite.MetroSwitch Refresh_Switch;
         private MetroSuite.MetroTracker CPU_Tracker;
         private MetroSuite.MetroTabControl metroTabControl1;
         private System.Windows.Forms.TabPage BiosTab;
@@ -919,13 +991,19 @@
         private MetroSuite.MetroLabel metroLabel21;
         private MetroSuite.MetroSwitch RAM_Auto_Refresh;
         private MetroSuite.MetroTracker RAM_Tracker;
-        private MetroSuite.MetroLabel metroLabel22;
-        private MetroSuite.MetroLabel metroLabel23;
-        private MetroSuite.MetroLabel metroLabel24;
-        private MetroSuite.MetroLabel metroLabel25;
         private System.Windows.Forms.Timer timer2;
         private GChartLib.GCircularProgress RAM_Virtual_Progress;
         private MetroSuite.MetroLabel metroLabel26;
+        private MetroSuite.MetroLabel RAM_Voltage;
+        private MetroSuite.MetroLabel RAM_Speed;
+        private MetroSuite.MetroLabel RAM_Virtual_Size;
+        private MetroSuite.MetroLabel RAM_Physical_Size;
+        private MetroSuite.MetroLabel metroLabel30;
+        private MetroSuite.MetroLabel metroLabel29;
+        private MetroSuite.MetroLabel metroLabel28;
+        private MetroSuite.MetroLabel metroLabel27;
+        private MetroSuite.MetroLabel RAM_Virtual_Used;
+        private MetroSuite.MetroLabel RAM_Physical_Used;
     }
 }
 
