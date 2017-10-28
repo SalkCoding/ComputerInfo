@@ -34,7 +34,23 @@
             this.OtherTab = new System.Windows.Forms.TabPage();
             this.GraphicCardTab = new System.Windows.Forms.TabPage();
             this.DiskTab = new System.Windows.Forms.TabPage();
+            this.Disk_G_Progress = new GChartLib.GCircularProgress();
+            this.Disk_F_Progress = new GChartLib.GCircularProgress();
+            this.Disk_E_Progress = new GChartLib.GCircularProgress();
+            this.Disk_D_Progress = new GChartLib.GCircularProgress();
+            this.Disk_C_Progress = new GChartLib.GCircularProgress();
+            this.Disk_Refresh = new MetroSuite.MetroButton();
             this.MemoryTab = new System.Windows.Forms.TabPage();
+            this.RAM_Virtual_Used = new MetroSuite.MetroLabel();
+            this.RAM_Physical_Used = new MetroSuite.MetroLabel();
+            this.RAM_Voltage = new MetroSuite.MetroLabel();
+            this.RAM_Speed = new MetroSuite.MetroLabel();
+            this.RAM_Virtual_Size = new MetroSuite.MetroLabel();
+            this.RAM_Physical_Size = new MetroSuite.MetroLabel();
+            this.metroLabel30 = new MetroSuite.MetroLabel();
+            this.metroLabel29 = new MetroSuite.MetroLabel();
+            this.metroLabel28 = new MetroSuite.MetroLabel();
+            this.metroLabel27 = new MetroSuite.MetroLabel();
             this.RAM_Virtual_Progress = new GChartLib.GCircularProgress();
             this.metroLabel26 = new MetroSuite.MetroLabel();
             this.RAM_Refresh_Speed = new MetroSuite.MetroComboBox();
@@ -87,17 +103,7 @@
             this.metroLabel8 = new MetroSuite.MetroLabel();
             this.BIOS_Logo = new System.Windows.Forms.WebBrowser();
             this.OS_Page = new System.Windows.Forms.TabPage();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.metroLabel27 = new MetroSuite.MetroLabel();
-            this.metroLabel28 = new MetroSuite.MetroLabel();
-            this.metroLabel29 = new MetroSuite.MetroLabel();
-            this.metroLabel30 = new MetroSuite.MetroLabel();
-            this.RAM_Physical_Size = new MetroSuite.MetroLabel();
-            this.RAM_Virtual_Size = new MetroSuite.MetroLabel();
-            this.RAM_Speed = new MetroSuite.MetroLabel();
-            this.RAM_Voltage = new MetroSuite.MetroLabel();
-            this.RAM_Physical_Used = new MetroSuite.MetroLabel();
-            this.RAM_Virtual_Used = new MetroSuite.MetroLabel();
+            this.DiskTab.SuspendLayout();
             this.MemoryTab.SuspendLayout();
             this.CPUTab.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
@@ -108,7 +114,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // OtherTab
             // 
@@ -130,12 +136,103 @@
             // 
             // DiskTab
             // 
+            this.DiskTab.Controls.Add(this.Disk_G_Progress);
+            this.DiskTab.Controls.Add(this.Disk_F_Progress);
+            this.DiskTab.Controls.Add(this.Disk_E_Progress);
+            this.DiskTab.Controls.Add(this.Disk_D_Progress);
+            this.DiskTab.Controls.Add(this.Disk_C_Progress);
+            this.DiskTab.Controls.Add(this.Disk_Refresh);
             this.DiskTab.Location = new System.Drawing.Point(124, 4);
             this.DiskTab.Name = "DiskTab";
             this.DiskTab.Size = new System.Drawing.Size(776, 566);
             this.DiskTab.TabIndex = 2;
             this.DiskTab.Text = "Disk";
             this.DiskTab.UseVisualStyleBackColor = true;
+            // 
+            // Disk_G_Progress
+            // 
+            this.Disk_G_Progress.CircleColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Disk_G_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
+            this.Disk_G_Progress.ForeColor = System.Drawing.Color.Gray;
+            this.Disk_G_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
+            this.Disk_G_Progress.Location = new System.Drawing.Point(539, 77);
+            this.Disk_G_Progress.Name = "Disk_G_Progress";
+            this.Disk_G_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Disk_G_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
+            this.Disk_G_Progress.Size = new System.Drawing.Size(128, 128);
+            this.Disk_G_Progress.TabIndex = 5;
+            this.Disk_G_Progress.Value = 100;
+            // 
+            // Disk_F_Progress
+            // 
+            this.Disk_F_Progress.CircleColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Disk_F_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
+            this.Disk_F_Progress.ForeColor = System.Drawing.Color.Gray;
+            this.Disk_F_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
+            this.Disk_F_Progress.Location = new System.Drawing.Point(405, 77);
+            this.Disk_F_Progress.Name = "Disk_F_Progress";
+            this.Disk_F_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Disk_F_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
+            this.Disk_F_Progress.Size = new System.Drawing.Size(128, 128);
+            this.Disk_F_Progress.TabIndex = 4;
+            this.Disk_F_Progress.Value = 100;
+            // 
+            // Disk_E_Progress
+            // 
+            this.Disk_E_Progress.CircleColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Disk_E_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
+            this.Disk_E_Progress.ForeColor = System.Drawing.Color.Gray;
+            this.Disk_E_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
+            this.Disk_E_Progress.Location = new System.Drawing.Point(271, 77);
+            this.Disk_E_Progress.Name = "Disk_E_Progress";
+            this.Disk_E_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Disk_E_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
+            this.Disk_E_Progress.Size = new System.Drawing.Size(128, 128);
+            this.Disk_E_Progress.TabIndex = 3;
+            this.Disk_E_Progress.Value = 100;
+            // 
+            // Disk_D_Progress
+            // 
+            this.Disk_D_Progress.CircleColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Disk_D_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
+            this.Disk_D_Progress.ForeColor = System.Drawing.Color.Gray;
+            this.Disk_D_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
+            this.Disk_D_Progress.Location = new System.Drawing.Point(137, 77);
+            this.Disk_D_Progress.Name = "Disk_D_Progress";
+            this.Disk_D_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Disk_D_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
+            this.Disk_D_Progress.Size = new System.Drawing.Size(128, 128);
+            this.Disk_D_Progress.TabIndex = 2;
+            this.Disk_D_Progress.Value = 100;
+            // 
+            // Disk_C_Progress
+            // 
+            this.Disk_C_Progress.CircleColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Disk_C_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
+            this.Disk_C_Progress.ForeColor = System.Drawing.Color.Gray;
+            this.Disk_C_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
+            this.Disk_C_Progress.Location = new System.Drawing.Point(3, 77);
+            this.Disk_C_Progress.Name = "Disk_C_Progress";
+            this.Disk_C_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Disk_C_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
+            this.Disk_C_Progress.Size = new System.Drawing.Size(128, 128);
+            this.Disk_C_Progress.TabIndex = 1;
+            this.Disk_C_Progress.Value = 100;
+            // 
+            // Disk_Refresh
+            // 
+            this.Disk_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Disk_Refresh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.Disk_Refresh.DefaultColor = System.Drawing.Color.White;
+            this.Disk_Refresh.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.Disk_Refresh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Disk_Refresh.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.Disk_Refresh.Location = new System.Drawing.Point(3, 3);
+            this.Disk_Refresh.Name = "Disk_Refresh";
+            this.Disk_Refresh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.Disk_Refresh.Size = new System.Drawing.Size(75, 23);
+            this.Disk_Refresh.TabIndex = 0;
+            this.Disk_Refresh.Text = "Refresh";
             // 
             // MemoryTab
             // 
@@ -165,6 +262,106 @@
             this.MemoryTab.TabIndex = 1;
             this.MemoryTab.Text = "Memory";
             this.MemoryTab.UseVisualStyleBackColor = true;
+            // 
+            // RAM_Virtual_Used
+            // 
+            this.RAM_Virtual_Used.AutoSize = true;
+            this.RAM_Virtual_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Virtual_Used.Location = new System.Drawing.Point(166, 462);
+            this.RAM_Virtual_Used.Name = "RAM_Virtual_Used";
+            this.RAM_Virtual_Used.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Virtual_Used.TabIndex = 44;
+            this.RAM_Virtual_Used.Text = "Unknow";
+            // 
+            // RAM_Physical_Used
+            // 
+            this.RAM_Physical_Used.AutoSize = true;
+            this.RAM_Physical_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Physical_Used.Location = new System.Drawing.Point(6, 462);
+            this.RAM_Physical_Used.Name = "RAM_Physical_Used";
+            this.RAM_Physical_Used.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Physical_Used.TabIndex = 43;
+            this.RAM_Physical_Used.Text = "Unknow";
+            // 
+            // RAM_Voltage
+            // 
+            this.RAM_Voltage.AutoSize = true;
+            this.RAM_Voltage.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Voltage.Location = new System.Drawing.Point(492, 390);
+            this.RAM_Voltage.Name = "RAM_Voltage";
+            this.RAM_Voltage.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Voltage.TabIndex = 42;
+            this.RAM_Voltage.Text = "Unknow";
+            // 
+            // RAM_Speed
+            // 
+            this.RAM_Speed.AutoSize = true;
+            this.RAM_Speed.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Speed.Location = new System.Drawing.Point(512, 350);
+            this.RAM_Speed.Name = "RAM_Speed";
+            this.RAM_Speed.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Speed.TabIndex = 41;
+            this.RAM_Speed.Text = "Unknow";
+            // 
+            // RAM_Virtual_Size
+            // 
+            this.RAM_Virtual_Size.AutoSize = true;
+            this.RAM_Virtual_Size.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Virtual_Size.Location = new System.Drawing.Point(580, 470);
+            this.RAM_Virtual_Size.Name = "RAM_Virtual_Size";
+            this.RAM_Virtual_Size.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Virtual_Size.TabIndex = 40;
+            this.RAM_Virtual_Size.Text = "Unknow";
+            // 
+            // RAM_Physical_Size
+            // 
+            this.RAM_Physical_Size.AutoSize = true;
+            this.RAM_Physical_Size.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RAM_Physical_Size.Location = new System.Drawing.Point(590, 430);
+            this.RAM_Physical_Size.Name = "RAM_Physical_Size";
+            this.RAM_Physical_Size.Size = new System.Drawing.Size(68, 21);
+            this.RAM_Physical_Size.TabIndex = 39;
+            this.RAM_Physical_Size.Text = "Unknow";
+            // 
+            // metroLabel30
+            // 
+            this.metroLabel30.AutoSize = true;
+            this.metroLabel30.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroLabel30.Location = new System.Drawing.Point(380, 390);
+            this.metroLabel30.Name = "metroLabel30";
+            this.metroLabel30.Size = new System.Drawing.Size(107, 21);
+            this.metroLabel30.TabIndex = 37;
+            this.metroLabel30.Text = "RAM Voltage :";
+            // 
+            // metroLabel29
+            // 
+            this.metroLabel29.AutoSize = true;
+            this.metroLabel29.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroLabel29.Location = new System.Drawing.Point(380, 350);
+            this.metroLabel29.Name = "metroLabel29";
+            this.metroLabel29.Size = new System.Drawing.Size(129, 21);
+            this.metroLabel29.TabIndex = 36;
+            this.metroLabel29.Text = "RAM Frequently :";
+            // 
+            // metroLabel28
+            // 
+            this.metroLabel28.AutoSize = true;
+            this.metroLabel28.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroLabel28.Location = new System.Drawing.Point(380, 470);
+            this.metroLabel28.Name = "metroLabel28";
+            this.metroLabel28.Size = new System.Drawing.Size(194, 21);
+            this.metroLabel28.TabIndex = 35;
+            this.metroLabel28.Text = "Total Virtual Memory Size :";
+            // 
+            // metroLabel27
+            // 
+            this.metroLabel27.AutoSize = true;
+            this.metroLabel27.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroLabel27.Location = new System.Drawing.Point(380, 430);
+            this.metroLabel27.Name = "metroLabel27";
+            this.metroLabel27.Size = new System.Drawing.Size(204, 21);
+            this.metroLabel27.TabIndex = 34;
+            this.metroLabel27.Text = "Total Physical Memory Size :";
             // 
             // RAM_Virtual_Progress
             // 
@@ -544,6 +741,7 @@
             // 
             // metroTabControl1
             // 
+            this.metroTabControl1.AnimationSpeed = 8;
             this.metroTabControl1.Appearance = System.Windows.Forms.Appearance.Normal;
             this.metroTabControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.metroTabControl1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -609,7 +807,7 @@
             // 
             this.BIOS_System_Product_Name.AutoSize = true;
             this.BIOS_System_Product_Name.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BIOS_System_Product_Name.Location = new System.Drawing.Point(658, 260);
+            this.BIOS_System_Product_Name.Location = new System.Drawing.Point(184, 440);
             this.BIOS_System_Product_Name.Name = "BIOS_System_Product_Name";
             this.BIOS_System_Product_Name.Size = new System.Drawing.Size(68, 21);
             this.BIOS_System_Product_Name.TabIndex = 21;
@@ -619,7 +817,7 @@
             // 
             this.BIOS_Release_Date.AutoSize = true;
             this.BIOS_Release_Date.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BIOS_Release_Date.Location = new System.Drawing.Point(156, 380);
+            this.BIOS_Release_Date.Location = new System.Drawing.Point(156, 320);
             this.BIOS_Release_Date.Name = "BIOS_Release_Date";
             this.BIOS_Release_Date.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Release_Date.TabIndex = 20;
@@ -629,7 +827,7 @@
             // 
             this.BIOS_Base_Board_Product.AutoSize = true;
             this.BIOS_Base_Board_Product.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BIOS_Base_Board_Product.Location = new System.Drawing.Point(164, 300);
+            this.BIOS_Base_Board_Product.Location = new System.Drawing.Point(164, 240);
             this.BIOS_Base_Board_Product.Name = "BIOS_Base_Board_Product";
             this.BIOS_Base_Board_Product.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Base_Board_Product.TabIndex = 19;
@@ -639,7 +837,7 @@
             // 
             this.BIOS_System_Version.AutoSize = true;
             this.BIOS_System_Version.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BIOS_System_Version.Location = new System.Drawing.Point(610, 340);
+            this.BIOS_System_Version.Location = new System.Drawing.Point(136, 520);
             this.BIOS_System_Version.Name = "BIOS_System_Version";
             this.BIOS_System_Version.Size = new System.Drawing.Size(68, 21);
             this.BIOS_System_Version.TabIndex = 18;
@@ -649,7 +847,7 @@
             // 
             this.BIOS_Version.AutoSize = true;
             this.BIOS_Version.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BIOS_Version.Location = new System.Drawing.Point(119, 420);
+            this.BIOS_Version.Location = new System.Drawing.Point(119, 360);
             this.BIOS_Version.Name = "BIOS_Version";
             this.BIOS_Version.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Version.TabIndex = 17;
@@ -659,7 +857,7 @@
             // 
             this.BIOS_Vendor.AutoSize = true;
             this.BIOS_Vendor.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BIOS_Vendor.Location = new System.Drawing.Point(117, 460);
+            this.BIOS_Vendor.Location = new System.Drawing.Point(117, 400);
             this.BIOS_Vendor.Name = "BIOS_Vendor";
             this.BIOS_Vendor.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Vendor.TabIndex = 16;
@@ -669,7 +867,7 @@
             // 
             this.BIOS_System_Manufacturer.AutoSize = true;
             this.BIOS_System_Manufacturer.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BIOS_System_Manufacturer.Location = new System.Drawing.Point(652, 300);
+            this.BIOS_System_Manufacturer.Location = new System.Drawing.Point(178, 480);
             this.BIOS_System_Manufacturer.Name = "BIOS_System_Manufacturer";
             this.BIOS_System_Manufacturer.Size = new System.Drawing.Size(68, 21);
             this.BIOS_System_Manufacturer.TabIndex = 15;
@@ -679,7 +877,7 @@
             // 
             this.BIOS_Base_Board_Version.AutoSize = true;
             this.BIOS_Base_Board_Version.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BIOS_Base_Board_Version.Location = new System.Drawing.Point(162, 340);
+            this.BIOS_Base_Board_Version.Location = new System.Drawing.Point(162, 280);
             this.BIOS_Base_Board_Version.Name = "BIOS_Base_Board_Version";
             this.BIOS_Base_Board_Version.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Base_Board_Version.TabIndex = 14;
@@ -689,7 +887,7 @@
             // 
             this.BIOS_Base_Board_Manufacturer.AutoSize = true;
             this.BIOS_Base_Board_Manufacturer.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BIOS_Base_Board_Manufacturer.Location = new System.Drawing.Point(204, 260);
+            this.BIOS_Base_Board_Manufacturer.Location = new System.Drawing.Point(204, 200);
             this.BIOS_Base_Board_Manufacturer.Name = "BIOS_Base_Board_Manufacturer";
             this.BIOS_Base_Board_Manufacturer.Size = new System.Drawing.Size(68, 21);
             this.BIOS_Base_Board_Manufacturer.TabIndex = 13;
@@ -699,7 +897,7 @@
             // 
             this.metroLabel20.AutoSize = true;
             this.metroLabel20.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel20.Location = new System.Drawing.Point(6, 340);
+            this.metroLabel20.Location = new System.Drawing.Point(6, 280);
             this.metroLabel20.Name = "metroLabel20";
             this.metroLabel20.Size = new System.Drawing.Size(150, 21);
             this.metroLabel20.TabIndex = 12;
@@ -709,7 +907,7 @@
             // 
             this.metroLabel19.AutoSize = true;
             this.metroLabel19.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel19.Location = new System.Drawing.Point(6, 380);
+            this.metroLabel19.Location = new System.Drawing.Point(6, 320);
             this.metroLabel19.Name = "metroLabel19";
             this.metroLabel19.Size = new System.Drawing.Size(144, 21);
             this.metroLabel19.TabIndex = 11;
@@ -719,7 +917,7 @@
             // 
             this.metroLabel18.AutoSize = true;
             this.metroLabel18.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel18.Location = new System.Drawing.Point(6, 420);
+            this.metroLabel18.Location = new System.Drawing.Point(6, 360);
             this.metroLabel18.Name = "metroLabel18";
             this.metroLabel18.Size = new System.Drawing.Size(107, 21);
             this.metroLabel18.TabIndex = 10;
@@ -729,7 +927,7 @@
             // 
             this.metroLabel17.AutoSize = true;
             this.metroLabel17.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel17.Location = new System.Drawing.Point(6, 460);
+            this.metroLabel17.Location = new System.Drawing.Point(6, 400);
             this.metroLabel17.Name = "metroLabel17";
             this.metroLabel17.Size = new System.Drawing.Size(105, 21);
             this.metroLabel17.TabIndex = 9;
@@ -739,7 +937,7 @@
             // 
             this.metroLabel16.AutoSize = true;
             this.metroLabel16.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel16.Location = new System.Drawing.Point(480, 260);
+            this.metroLabel16.Location = new System.Drawing.Point(6, 440);
             this.metroLabel16.Name = "metroLabel16";
             this.metroLabel16.Size = new System.Drawing.Size(172, 21);
             this.metroLabel16.TabIndex = 8;
@@ -749,7 +947,7 @@
             // 
             this.metroLabel13.AutoSize = true;
             this.metroLabel13.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel13.Location = new System.Drawing.Point(480, 300);
+            this.metroLabel13.Location = new System.Drawing.Point(6, 480);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(166, 21);
             this.metroLabel13.TabIndex = 5;
@@ -759,7 +957,7 @@
             // 
             this.metroLabel12.AutoSize = true;
             this.metroLabel12.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel12.Location = new System.Drawing.Point(6, 300);
+            this.metroLabel12.Location = new System.Drawing.Point(6, 240);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(152, 21);
             this.metroLabel12.TabIndex = 4;
@@ -769,7 +967,7 @@
             // 
             this.metroLabel11.AutoSize = true;
             this.metroLabel11.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel11.Location = new System.Drawing.Point(480, 340);
+            this.metroLabel11.Location = new System.Drawing.Point(6, 520);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(124, 21);
             this.metroLabel11.TabIndex = 3;
@@ -779,7 +977,7 @@
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel8.Location = new System.Drawing.Point(6, 260);
+            this.metroLabel8.Location = new System.Drawing.Point(6, 200);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(192, 21);
             this.metroLabel8.TabIndex = 1;
@@ -791,7 +989,7 @@
             this.BIOS_Logo.MinimumSize = new System.Drawing.Size(20, 20);
             this.BIOS_Logo.Name = "BIOS_Logo";
             this.BIOS_Logo.ScrollBarsEnabled = false;
-            this.BIOS_Logo.Size = new System.Drawing.Size(770, 250);
+            this.BIOS_Logo.Size = new System.Drawing.Size(770, 194);
             this.BIOS_Logo.TabIndex = 0;
             this.BIOS_Logo.Url = new System.Uri("http://post.phinf.naver.net/MjAxNzA3MDVfMTQ3/MDAxNDk5MjUxNTg2MjIw.V4DwmMEjlUi6n81" +
         "8eWwiH500XE22_3A-oBBRF6erLEwg.tKwunNjHea9jrTGUU3VBmvGF_CiWKuAC3jdKL5gtVSYg.JPEG/" +
@@ -807,112 +1005,6 @@
             this.OS_Page.Text = "Operation System";
             this.OS_Page.UseVisualStyleBackColor = true;
             // 
-            // timer2
-            // 
-            this.timer2.Enabled = true;
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // metroLabel27
-            // 
-            this.metroLabel27.AutoSize = true;
-            this.metroLabel27.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel27.Location = new System.Drawing.Point(380, 430);
-            this.metroLabel27.Name = "metroLabel27";
-            this.metroLabel27.Size = new System.Drawing.Size(204, 21);
-            this.metroLabel27.TabIndex = 34;
-            this.metroLabel27.Text = "Total Physical Memory Size :";
-            // 
-            // metroLabel28
-            // 
-            this.metroLabel28.AutoSize = true;
-            this.metroLabel28.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel28.Location = new System.Drawing.Point(380, 470);
-            this.metroLabel28.Name = "metroLabel28";
-            this.metroLabel28.Size = new System.Drawing.Size(194, 21);
-            this.metroLabel28.TabIndex = 35;
-            this.metroLabel28.Text = "Total Virtual Memory Size :";
-            // 
-            // metroLabel29
-            // 
-            this.metroLabel29.AutoSize = true;
-            this.metroLabel29.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel29.Location = new System.Drawing.Point(380, 350);
-            this.metroLabel29.Name = "metroLabel29";
-            this.metroLabel29.Size = new System.Drawing.Size(129, 21);
-            this.metroLabel29.TabIndex = 36;
-            this.metroLabel29.Text = "RAM Frequently :";
-            // 
-            // metroLabel30
-            // 
-            this.metroLabel30.AutoSize = true;
-            this.metroLabel30.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel30.Location = new System.Drawing.Point(380, 390);
-            this.metroLabel30.Name = "metroLabel30";
-            this.metroLabel30.Size = new System.Drawing.Size(107, 21);
-            this.metroLabel30.TabIndex = 37;
-            this.metroLabel30.Text = "RAM Voltage :";
-            // 
-            // RAM_Physical_Size
-            // 
-            this.RAM_Physical_Size.AutoSize = true;
-            this.RAM_Physical_Size.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.RAM_Physical_Size.Location = new System.Drawing.Point(590, 430);
-            this.RAM_Physical_Size.Name = "RAM_Physical_Size";
-            this.RAM_Physical_Size.Size = new System.Drawing.Size(68, 21);
-            this.RAM_Physical_Size.TabIndex = 39;
-            this.RAM_Physical_Size.Text = "Unknow";
-            // 
-            // RAM_Virtual_Size
-            // 
-            this.RAM_Virtual_Size.AutoSize = true;
-            this.RAM_Virtual_Size.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.RAM_Virtual_Size.Location = new System.Drawing.Point(580, 470);
-            this.RAM_Virtual_Size.Name = "RAM_Virtual_Size";
-            this.RAM_Virtual_Size.Size = new System.Drawing.Size(68, 21);
-            this.RAM_Virtual_Size.TabIndex = 40;
-            this.RAM_Virtual_Size.Text = "Unknow";
-            // 
-            // RAM_Speed
-            // 
-            this.RAM_Speed.AutoSize = true;
-            this.RAM_Speed.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.RAM_Speed.Location = new System.Drawing.Point(512, 350);
-            this.RAM_Speed.Name = "RAM_Speed";
-            this.RAM_Speed.Size = new System.Drawing.Size(68, 21);
-            this.RAM_Speed.TabIndex = 41;
-            this.RAM_Speed.Text = "Unknow";
-            // 
-            // RAM_Voltage
-            // 
-            this.RAM_Voltage.AutoSize = true;
-            this.RAM_Voltage.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.RAM_Voltage.Location = new System.Drawing.Point(492, 390);
-            this.RAM_Voltage.Name = "RAM_Voltage";
-            this.RAM_Voltage.Size = new System.Drawing.Size(68, 21);
-            this.RAM_Voltage.TabIndex = 42;
-            this.RAM_Voltage.Text = "Unknow";
-            // 
-            // RAM_Physical_Used
-            // 
-            this.RAM_Physical_Used.AutoSize = true;
-            this.RAM_Physical_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.RAM_Physical_Used.Location = new System.Drawing.Point(6, 462);
-            this.RAM_Physical_Used.Name = "RAM_Physical_Used";
-            this.RAM_Physical_Used.Size = new System.Drawing.Size(68, 21);
-            this.RAM_Physical_Used.TabIndex = 43;
-            this.RAM_Physical_Used.Text = "Unknow";
-            // 
-            // RAM_Virtual_Used
-            // 
-            this.RAM_Virtual_Used.AutoSize = true;
-            this.RAM_Virtual_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.RAM_Virtual_Used.Location = new System.Drawing.Point(166, 462);
-            this.RAM_Virtual_Used.Name = "RAM_Virtual_Used";
-            this.RAM_Virtual_Used.Size = new System.Drawing.Size(68, 21);
-            this.RAM_Virtual_Used.TabIndex = 44;
-            this.RAM_Virtual_Used.Text = "Unknow";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -924,6 +1016,7 @@
             this.Name = "Form1";
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "ComputerInfo";
+            this.DiskTab.ResumeLayout(false);
             this.MemoryTab.ResumeLayout(false);
             this.MemoryTab.PerformLayout();
             this.CPUTab.ResumeLayout(false);
@@ -991,7 +1084,6 @@
         private MetroSuite.MetroLabel metroLabel21;
         private MetroSuite.MetroSwitch RAM_Auto_Refresh;
         private MetroSuite.MetroTracker RAM_Tracker;
-        private System.Windows.Forms.Timer timer2;
         private GChartLib.GCircularProgress RAM_Virtual_Progress;
         private MetroSuite.MetroLabel metroLabel26;
         private MetroSuite.MetroLabel RAM_Voltage;
@@ -1004,6 +1096,12 @@
         private MetroSuite.MetroLabel metroLabel27;
         private MetroSuite.MetroLabel RAM_Virtual_Used;
         private MetroSuite.MetroLabel RAM_Physical_Used;
+        private GChartLib.GCircularProgress Disk_C_Progress;
+        private MetroSuite.MetroButton Disk_Refresh;
+        private GChartLib.GCircularProgress Disk_G_Progress;
+        private GChartLib.GCircularProgress Disk_F_Progress;
+        private GChartLib.GCircularProgress Disk_E_Progress;
+        private GChartLib.GCircularProgress Disk_D_Progress;
     }
 }
 

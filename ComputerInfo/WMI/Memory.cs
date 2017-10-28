@@ -19,9 +19,7 @@ namespace ComputerInfo.WMI
 
         public static void Initialization()
         {
-            ManagementObjectSearcher RAM_WMI = new ManagementObjectSearcher(Constants.WMI_RAM);
-            ManagementObjectCollection list = RAM_WMI.Get();
-            foreach (ManagementObject wmi in list)
+            foreach (ManagementObject wmi in new ManagementObjectSearcher(Constants.WMI_RAM).Get())
             {
                 try
                 {

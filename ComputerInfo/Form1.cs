@@ -21,13 +21,15 @@ namespace ComputerInfo
         {
             //init
             InitializeComponent();
+
             WMI.CPU.Initialization();
             WMI.Bios.Initialization();
             WMI.Memory.Initialization();
+            WMI.Disk.Initialization();
 
             ComboBoxlist = new MetroComboBox[] { Refresh_Speed,RAM_Refresh_Speed };
             Switchlist = new MetroSwitch[] { Refresh_Switch,RAM_Auto_Refresh};
-            Timerlist = new Timer[] { timer1,timer2 };
+            Timerlist = new Timer[] { timer1 };
 
             CPU_Tracker.Paths.Add(Cpu_Graph.GraphPath);
             RAM_Tracker.Paths.Add(Ram_Graph.GraphPath);
@@ -67,7 +69,7 @@ namespace ComputerInfo
                     }
                     foreach (MetroComboBox combobox in ComboBoxlist)
                     {
-                        combobox.SelectedIndex = 3;
+                        combobox.SelectedIndex = 2;
                     }
                     break;
             }
@@ -98,16 +100,12 @@ namespace ComputerInfo
                 }
             }
         }
-        
-        #region You don't have to care about this 
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Cpu_Graph.RefreshGraph(CPU_Tracker,CPU_Usage);
-        }
+        #region You shouldn't have to care about this 
 
-        private void timer2_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
+            Cpu_Graph.RefreshGraph(CPU_Tracker, CPU_Usage);
             Ram_Graph.RefreshGraph(RAM_Tracker, RAM_Physical_Progress, RAM_Virtual_Progress, RAM_Physical_Used, RAM_Virtual_Used);
         }
 

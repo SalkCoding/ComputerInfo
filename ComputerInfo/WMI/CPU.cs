@@ -12,7 +12,7 @@ namespace ComputerInfo.WMI
     {
         private static String CPU_NAME;
         private static Int32 CPU_CURRENT_CLOCK;
-        private static Int32 CPU_VOLTAGE;
+        private static Double CPU_VOLTAGE;
         private static Int32 CPU_L2CACHE_SIZE;
         private static Int32 CPU_L3CACHE_SIZE;
         private static Int32 CPU_CORE_COUNT;
@@ -20,15 +20,13 @@ namespace ComputerInfo.WMI
 
         public static void Initialization()
         {
-            ManagementObjectSearcher CPU_WMI = new ManagementObjectSearcher(Constants.WMI_CPU);
-            ManagementObjectCollection list = CPU_WMI.Get();
-            foreach (ManagementObject wmi in list)
+            foreach (ManagementObject wmi in new ManagementObjectSearcher(Constants.WMI_CPU).Get())
             {
                 try
                 {
                     CPU_NAME = wmi[Constants.WMI_CPU_NAME].ToString();
                     CPU_CURRENT_CLOCK = Convert.ToInt32(wmi[Constants.WMI_CPU_MAX_CLOCK]);
-                    CPU_VOLTAGE = Convert.ToInt32(wmi[Constants.WMI_CPU_VOLTAGE]);
+                    CPU_VOLTAGE = Convert.ToDouble(wmi[Constants.WMI_CPU_VOLTAGE]) / 10;
                     CPU_L2CACHE_SIZE = Convert.ToInt32(wmi[Constants.WMI_CPU_L2CACHE_SIZE]);
                     CPU_L3CACHE_SIZE = Convert.ToInt32(wmi[Constants.WMI_CPU_L3CACHE_SIZE]);
                     CPU_CORE_COUNT = Convert.ToInt32(wmi[Constants.WMI_CPU_CORE_COUNT]);
@@ -45,7 +43,7 @@ namespace ComputerInfo.WMI
 
         public static Int32 CPU_Current_Clock => CPU_CURRENT_CLOCK;
 
-        public static Int32 CPU_Voltage => CPU_VOLTAGE;
+        public static Double CPU_Voltage => CPU_VOLTAGE;
 
         public static Int32 CPU_L2Cache_Size => CPU_L2CACHE_SIZE;
 

@@ -42,7 +42,9 @@ namespace ComputerInfo.Define
         public static String WMI_RAM_SPEED = "Speed";
         public static String WMI_RAM_VOLTAGE = "ConfiguredVoltage";
         //DISK WMI
-
+        public static String WMI_DISK = "select * from  Win32_DiskDrive";
+        public static String WMI_DISK_MODEL = "Model";
+        public static String WMI_DISK_SERIAL_NUMBER = "SerialNumber";
         //GPU WMI
 
         //OTHER WMI

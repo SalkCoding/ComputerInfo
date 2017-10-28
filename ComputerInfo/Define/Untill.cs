@@ -37,7 +37,7 @@ namespace ComputerInfo.Define
         {
             CPU_Name_Label.Text = WMI.CPU.CPU_Name;
             CPU_Current_Clock_Label.Text = String.Format("{0:F2} Ghz", (WMI.CPU.CPU_Current_Clock / 1000f));
-            CPU_Voltage_Label.Text = String.Format("{0:F2} V", WMI.CPU.CPU_Voltage);
+            CPU_Voltage_Label.Text = String.Format("{0:F3} V", WMI.CPU.CPU_Voltage);
             CPU_L2Cache_Label.Text = String.Format("{0:F2} Mb", (WMI.CPU.CPU_L2Cache_Size / 1024f));
             CPU_L3Cache_Label.Text = String.Format("{0:F2} Mb", (WMI.CPU.CPU_L3Cache_Size / 1024f));
             CPU_Core_Label.Text = WMI.CPU.CPU_Core_Count.ToString();
