@@ -34,6 +34,27 @@
             this.OtherTab = new System.Windows.Forms.TabPage();
             this.GraphicCardTab = new System.Windows.Forms.TabPage();
             this.DiskTab = new System.Windows.Forms.TabPage();
+            this.Disk_D_Used = new MetroSuite.MetroLabel();
+            this.Disk_E_Used = new MetroSuite.MetroLabel();
+            this.Disk_F_Used = new MetroSuite.MetroLabel();
+            this.Disk_G_Used = new MetroSuite.MetroLabel();
+            this.Disk_H_Used = new MetroSuite.MetroLabel();
+            this.Disk_C_Used = new MetroSuite.MetroLabel();
+            this.Disk_H_Total = new MetroSuite.MetroLabel();
+            this.Disk_H_Caption = new MetroSuite.MetroLabel();
+            this.Disk_E_Total = new MetroSuite.MetroLabel();
+            this.Disk_E_Caption = new MetroSuite.MetroLabel();
+            this.Disk_H_Progress = new GChartLib.GCircularProgress();
+            this.Disk_F_Total = new MetroSuite.MetroLabel();
+            this.Disk_F_Caption = new MetroSuite.MetroLabel();
+            this.Disk_G_Total = new MetroSuite.MetroLabel();
+            this.Disk_G_Caption = new MetroSuite.MetroLabel();
+            this.Disk_D_Total = new MetroSuite.MetroLabel();
+            this.Disk_D_Caption = new MetroSuite.MetroLabel();
+            this.Disk_C_Total = new MetroSuite.MetroLabel();
+            this.Disk_C_Caption = new MetroSuite.MetroLabel();
+            this.metroLabel22 = new MetroSuite.MetroLabel();
+            this.Disk_More_Info = new MetroSuite.MetroNavigationButton();
             this.Disk_G_Progress = new GChartLib.GCircularProgress();
             this.Disk_F_Progress = new GChartLib.GCircularProgress();
             this.Disk_E_Progress = new GChartLib.GCircularProgress();
@@ -136,6 +157,27 @@
             // 
             // DiskTab
             // 
+            this.DiskTab.Controls.Add(this.Disk_D_Used);
+            this.DiskTab.Controls.Add(this.Disk_E_Used);
+            this.DiskTab.Controls.Add(this.Disk_F_Used);
+            this.DiskTab.Controls.Add(this.Disk_G_Used);
+            this.DiskTab.Controls.Add(this.Disk_H_Used);
+            this.DiskTab.Controls.Add(this.Disk_C_Used);
+            this.DiskTab.Controls.Add(this.Disk_H_Total);
+            this.DiskTab.Controls.Add(this.Disk_H_Caption);
+            this.DiskTab.Controls.Add(this.Disk_E_Total);
+            this.DiskTab.Controls.Add(this.Disk_E_Caption);
+            this.DiskTab.Controls.Add(this.Disk_H_Progress);
+            this.DiskTab.Controls.Add(this.Disk_F_Total);
+            this.DiskTab.Controls.Add(this.Disk_F_Caption);
+            this.DiskTab.Controls.Add(this.Disk_G_Total);
+            this.DiskTab.Controls.Add(this.Disk_G_Caption);
+            this.DiskTab.Controls.Add(this.Disk_D_Total);
+            this.DiskTab.Controls.Add(this.Disk_D_Caption);
+            this.DiskTab.Controls.Add(this.Disk_C_Total);
+            this.DiskTab.Controls.Add(this.Disk_C_Caption);
+            this.DiskTab.Controls.Add(this.metroLabel22);
+            this.DiskTab.Controls.Add(this.Disk_More_Info);
             this.DiskTab.Controls.Add(this.Disk_G_Progress);
             this.DiskTab.Controls.Add(this.Disk_F_Progress);
             this.DiskTab.Controls.Add(this.Disk_E_Progress);
@@ -149,19 +191,246 @@
             this.DiskTab.Text = "Disk";
             this.DiskTab.UseVisualStyleBackColor = true;
             // 
+            // Disk_D_Used
+            // 
+            this.Disk_D_Used.AutoSize = true;
+            this.Disk_D_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_D_Used.Location = new System.Drawing.Point(326, 148);
+            this.Disk_D_Used.Name = "Disk_D_Used";
+            this.Disk_D_Used.Size = new System.Drawing.Size(60, 21);
+            this.Disk_D_Used.TabIndex = 27;
+            this.Disk_D_Used.Text = "D Used";
+            // 
+            // Disk_E_Used
+            // 
+            this.Disk_E_Used.AutoSize = true;
+            this.Disk_E_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_E_Used.Location = new System.Drawing.Point(576, 148);
+            this.Disk_E_Used.Name = "Disk_E_Used";
+            this.Disk_E_Used.Size = new System.Drawing.Size(57, 21);
+            this.Disk_E_Used.TabIndex = 26;
+            this.Disk_E_Used.Text = "E Used";
+            // 
+            // Disk_F_Used
+            // 
+            this.Disk_F_Used.AutoSize = true;
+            this.Disk_F_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_F_Used.Location = new System.Drawing.Point(75, 376);
+            this.Disk_F_Used.Name = "Disk_F_Used";
+            this.Disk_F_Used.Size = new System.Drawing.Size(57, 21);
+            this.Disk_F_Used.TabIndex = 25;
+            this.Disk_F_Used.Text = "F Used";
+            // 
+            // Disk_G_Used
+            // 
+            this.Disk_G_Used.AutoSize = true;
+            this.Disk_G_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_G_Used.Location = new System.Drawing.Point(326, 376);
+            this.Disk_G_Used.Name = "Disk_G_Used";
+            this.Disk_G_Used.Size = new System.Drawing.Size(60, 21);
+            this.Disk_G_Used.TabIndex = 24;
+            this.Disk_G_Used.Text = "G Used";
+            // 
+            // Disk_H_Used
+            // 
+            this.Disk_H_Used.AutoSize = true;
+            this.Disk_H_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_H_Used.Location = new System.Drawing.Point(570, 376);
+            this.Disk_H_Used.Name = "Disk_H_Used";
+            this.Disk_H_Used.Size = new System.Drawing.Size(60, 21);
+            this.Disk_H_Used.TabIndex = 23;
+            this.Disk_H_Used.Text = "H Used";
+            // 
+            // Disk_C_Used
+            // 
+            this.Disk_C_Used.AutoSize = true;
+            this.Disk_C_Used.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_C_Used.Location = new System.Drawing.Point(76, 145);
+            this.Disk_C_Used.Name = "Disk_C_Used";
+            this.Disk_C_Used.Size = new System.Drawing.Size(59, 21);
+            this.Disk_C_Used.TabIndex = 22;
+            this.Disk_C_Used.Text = "C Used";
+            // 
+            // Disk_H_Total
+            // 
+            this.Disk_H_Total.AutoSize = true;
+            this.Disk_H_Total.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_H_Total.Location = new System.Drawing.Point(570, 355);
+            this.Disk_H_Total.Name = "Disk_H_Total";
+            this.Disk_H_Total.Size = new System.Drawing.Size(57, 21);
+            this.Disk_H_Total.TabIndex = 21;
+            this.Disk_H_Total.Text = "H Total";
+            // 
+            // Disk_H_Caption
+            // 
+            this.Disk_H_Caption.AutoSize = true;
+            this.Disk_H_Caption.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_H_Caption.Location = new System.Drawing.Point(570, 334);
+            this.Disk_H_Caption.Name = "Disk_H_Caption";
+            this.Disk_H_Caption.Size = new System.Drawing.Size(79, 21);
+            this.Disk_H_Caption.TabIndex = 20;
+            this.Disk_H_Caption.Text = "H Caption";
+            // 
+            // Disk_E_Total
+            // 
+            this.Disk_E_Total.AutoSize = true;
+            this.Disk_E_Total.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_E_Total.Location = new System.Drawing.Point(576, 124);
+            this.Disk_E_Total.Name = "Disk_E_Total";
+            this.Disk_E_Total.Size = new System.Drawing.Size(54, 21);
+            this.Disk_E_Total.TabIndex = 19;
+            this.Disk_E_Total.Text = "E Total";
+            // 
+            // Disk_E_Caption
+            // 
+            this.Disk_E_Caption.AutoSize = true;
+            this.Disk_E_Caption.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_E_Caption.Location = new System.Drawing.Point(576, 103);
+            this.Disk_E_Caption.Name = "Disk_E_Caption";
+            this.Disk_E_Caption.Size = new System.Drawing.Size(76, 21);
+            this.Disk_E_Caption.TabIndex = 18;
+            this.Disk_E_Caption.Text = "E Caption";
+            // 
+            // Disk_H_Progress
+            // 
+            this.Disk_H_Progress.CircleColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Disk_H_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
+            this.Disk_H_Progress.ForeColor = System.Drawing.Color.Gray;
+            this.Disk_H_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
+            this.Disk_H_Progress.Location = new System.Drawing.Point(574, 400);
+            this.Disk_H_Progress.Name = "Disk_H_Progress";
+            this.Disk_H_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Disk_H_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
+            this.Disk_H_Progress.Size = new System.Drawing.Size(128, 128);
+            this.Disk_H_Progress.TabIndex = 17;
+            this.Disk_H_Progress.Value = 0;
+            // 
+            // Disk_F_Total
+            // 
+            this.Disk_F_Total.AutoSize = true;
+            this.Disk_F_Total.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_F_Total.Location = new System.Drawing.Point(75, 355);
+            this.Disk_F_Total.Name = "Disk_F_Total";
+            this.Disk_F_Total.Size = new System.Drawing.Size(54, 21);
+            this.Disk_F_Total.TabIndex = 16;
+            this.Disk_F_Total.Text = "F Total";
+            // 
+            // Disk_F_Caption
+            // 
+            this.Disk_F_Caption.AutoSize = true;
+            this.Disk_F_Caption.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_F_Caption.Location = new System.Drawing.Point(75, 334);
+            this.Disk_F_Caption.Name = "Disk_F_Caption";
+            this.Disk_F_Caption.Size = new System.Drawing.Size(76, 21);
+            this.Disk_F_Caption.TabIndex = 15;
+            this.Disk_F_Caption.Text = "F Caption";
+            // 
+            // Disk_G_Total
+            // 
+            this.Disk_G_Total.AutoSize = true;
+            this.Disk_G_Total.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_G_Total.Location = new System.Drawing.Point(326, 355);
+            this.Disk_G_Total.Name = "Disk_G_Total";
+            this.Disk_G_Total.Size = new System.Drawing.Size(57, 21);
+            this.Disk_G_Total.TabIndex = 14;
+            this.Disk_G_Total.Text = "G Total";
+            // 
+            // Disk_G_Caption
+            // 
+            this.Disk_G_Caption.AutoSize = true;
+            this.Disk_G_Caption.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_G_Caption.Location = new System.Drawing.Point(326, 334);
+            this.Disk_G_Caption.Name = "Disk_G_Caption";
+            this.Disk_G_Caption.Size = new System.Drawing.Size(79, 21);
+            this.Disk_G_Caption.TabIndex = 13;
+            this.Disk_G_Caption.Text = "G Caption";
+            // 
+            // Disk_D_Total
+            // 
+            this.Disk_D_Total.AutoSize = true;
+            this.Disk_D_Total.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_D_Total.Location = new System.Drawing.Point(326, 124);
+            this.Disk_D_Total.Name = "Disk_D_Total";
+            this.Disk_D_Total.Size = new System.Drawing.Size(57, 21);
+            this.Disk_D_Total.TabIndex = 12;
+            this.Disk_D_Total.Text = "D Total";
+            // 
+            // Disk_D_Caption
+            // 
+            this.Disk_D_Caption.AutoSize = true;
+            this.Disk_D_Caption.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_D_Caption.Location = new System.Drawing.Point(326, 103);
+            this.Disk_D_Caption.Name = "Disk_D_Caption";
+            this.Disk_D_Caption.Size = new System.Drawing.Size(79, 21);
+            this.Disk_D_Caption.TabIndex = 11;
+            this.Disk_D_Caption.Text = "D Caption";
+            // 
+            // Disk_C_Total
+            // 
+            this.Disk_C_Total.AutoSize = true;
+            this.Disk_C_Total.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_C_Total.Location = new System.Drawing.Point(76, 124);
+            this.Disk_C_Total.Name = "Disk_C_Total";
+            this.Disk_C_Total.Size = new System.Drawing.Size(56, 21);
+            this.Disk_C_Total.TabIndex = 10;
+            this.Disk_C_Total.Text = "C Total";
+            // 
+            // Disk_C_Caption
+            // 
+            this.Disk_C_Caption.AutoSize = true;
+            this.Disk_C_Caption.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Disk_C_Caption.Location = new System.Drawing.Point(76, 103);
+            this.Disk_C_Caption.Name = "Disk_C_Caption";
+            this.Disk_C_Caption.Size = new System.Drawing.Size(78, 21);
+            this.Disk_C_Caption.TabIndex = 9;
+            this.Disk_C_Caption.Text = "C Caption";
+            // 
+            // metroLabel22
+            // 
+            this.metroLabel22.AutoSize = true;
+            this.metroLabel22.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroLabel22.Location = new System.Drawing.Point(666, 3);
+            this.metroLabel22.Name = "metroLabel22";
+            this.metroLabel22.Size = new System.Drawing.Size(78, 21);
+            this.metroLabel22.TabIndex = 7;
+            this.metroLabel22.Text = "More Info";
+            // 
+            // Disk_More_Info
+            // 
+            this.Disk_More_Info.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.Disk_More_Info.ArrowDirection = System.Windows.Forms.ArrowDirection.Right;
+            this.Disk_More_Info.ArrowHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.Disk_More_Info.ArrowPressedColor = System.Drawing.Color.White;
+            this.Disk_More_Info.BackColor = System.Drawing.Color.White;
+            this.Disk_More_Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Disk_More_Info.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.Disk_More_Info.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.Disk_More_Info.BorderPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.Disk_More_Info.DefaultColor = System.Drawing.Color.White;
+            this.Disk_More_Info.DisabledArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.Disk_More_Info.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.Disk_More_Info.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Disk_More_Info.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.Disk_More_Info.Location = new System.Drawing.Point(736, 27);
+            this.Disk_More_Info.Name = "Disk_More_Info";
+            this.Disk_More_Info.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.Disk_More_Info.Size = new System.Drawing.Size(37, 40);
+            this.Disk_More_Info.TabIndex = 6;
+            this.Disk_More_Info.Click += new System.EventHandler(this.Disk_More_Info_Click);
+            // 
             // Disk_G_Progress
             // 
             this.Disk_G_Progress.CircleColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Disk_G_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
             this.Disk_G_Progress.ForeColor = System.Drawing.Color.Gray;
             this.Disk_G_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
-            this.Disk_G_Progress.Location = new System.Drawing.Point(539, 77);
+            this.Disk_G_Progress.Location = new System.Drawing.Point(330, 400);
             this.Disk_G_Progress.Name = "Disk_G_Progress";
             this.Disk_G_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Disk_G_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
             this.Disk_G_Progress.Size = new System.Drawing.Size(128, 128);
             this.Disk_G_Progress.TabIndex = 5;
-            this.Disk_G_Progress.Value = 100;
+            this.Disk_G_Progress.Value = 0;
             // 
             // Disk_F_Progress
             // 
@@ -169,13 +438,13 @@
             this.Disk_F_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
             this.Disk_F_Progress.ForeColor = System.Drawing.Color.Gray;
             this.Disk_F_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
-            this.Disk_F_Progress.Location = new System.Drawing.Point(405, 77);
+            this.Disk_F_Progress.Location = new System.Drawing.Point(80, 400);
             this.Disk_F_Progress.Name = "Disk_F_Progress";
             this.Disk_F_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Disk_F_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
             this.Disk_F_Progress.Size = new System.Drawing.Size(128, 128);
             this.Disk_F_Progress.TabIndex = 4;
-            this.Disk_F_Progress.Value = 100;
+            this.Disk_F_Progress.Value = 0;
             // 
             // Disk_E_Progress
             // 
@@ -183,13 +452,13 @@
             this.Disk_E_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
             this.Disk_E_Progress.ForeColor = System.Drawing.Color.Gray;
             this.Disk_E_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
-            this.Disk_E_Progress.Location = new System.Drawing.Point(271, 77);
+            this.Disk_E_Progress.Location = new System.Drawing.Point(580, 172);
             this.Disk_E_Progress.Name = "Disk_E_Progress";
             this.Disk_E_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Disk_E_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
             this.Disk_E_Progress.Size = new System.Drawing.Size(128, 128);
             this.Disk_E_Progress.TabIndex = 3;
-            this.Disk_E_Progress.Value = 100;
+            this.Disk_E_Progress.Value = 0;
             // 
             // Disk_D_Progress
             // 
@@ -197,13 +466,13 @@
             this.Disk_D_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
             this.Disk_D_Progress.ForeColor = System.Drawing.Color.Gray;
             this.Disk_D_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
-            this.Disk_D_Progress.Location = new System.Drawing.Point(137, 77);
+            this.Disk_D_Progress.Location = new System.Drawing.Point(330, 172);
             this.Disk_D_Progress.Name = "Disk_D_Progress";
             this.Disk_D_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Disk_D_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
             this.Disk_D_Progress.Size = new System.Drawing.Size(128, 128);
             this.Disk_D_Progress.TabIndex = 2;
-            this.Disk_D_Progress.Value = 100;
+            this.Disk_D_Progress.Value = 0;
             // 
             // Disk_C_Progress
             // 
@@ -211,13 +480,13 @@
             this.Disk_C_Progress.Font = new System.Drawing.Font("Segoe UI Light", 15F);
             this.Disk_C_Progress.ForeColor = System.Drawing.Color.Gray;
             this.Disk_C_Progress.InnerCircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
-            this.Disk_C_Progress.Location = new System.Drawing.Point(3, 77);
+            this.Disk_C_Progress.Location = new System.Drawing.Point(79, 172);
             this.Disk_C_Progress.Name = "Disk_C_Progress";
             this.Disk_C_Progress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Disk_C_Progress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
             this.Disk_C_Progress.Size = new System.Drawing.Size(128, 128);
             this.Disk_C_Progress.TabIndex = 1;
-            this.Disk_C_Progress.Value = 100;
+            this.Disk_C_Progress.Value = 0;
             // 
             // Disk_Refresh
             // 
@@ -227,12 +496,13 @@
             this.Disk_Refresh.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.Disk_Refresh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Disk_Refresh.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.Disk_Refresh.Location = new System.Drawing.Point(3, 3);
+            this.Disk_Refresh.Location = new System.Drawing.Point(334, 27);
             this.Disk_Refresh.Name = "Disk_Refresh";
             this.Disk_Refresh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Disk_Refresh.Size = new System.Drawing.Size(75, 23);
+            this.Disk_Refresh.Size = new System.Drawing.Size(120, 40);
             this.Disk_Refresh.TabIndex = 0;
             this.Disk_Refresh.Text = "Refresh";
+            this.Disk_Refresh.Click += new System.EventHandler(this.Disk_Refresh_Click);
             // 
             // MemoryTab
             // 
@@ -456,6 +726,7 @@
             // 
             // RAM_Auto_Refresh
             // 
+            this.RAM_Auto_Refresh.BackColor = System.Drawing.Color.White;
             this.RAM_Auto_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.RAM_Auto_Refresh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
             this.RAM_Auto_Refresh.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -713,6 +984,7 @@
             // 
             // Refresh_Switch
             // 
+            this.Refresh_Switch.BackColor = System.Drawing.Color.White;
             this.Refresh_Switch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Refresh_Switch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
             this.Refresh_Switch.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -1017,6 +1289,7 @@
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "ComputerInfo";
             this.DiskTab.ResumeLayout(false);
+            this.DiskTab.PerformLayout();
             this.MemoryTab.ResumeLayout(false);
             this.MemoryTab.PerformLayout();
             this.CPUTab.ResumeLayout(false);
@@ -1102,6 +1375,27 @@
         private GChartLib.GCircularProgress Disk_F_Progress;
         private GChartLib.GCircularProgress Disk_E_Progress;
         private GChartLib.GCircularProgress Disk_D_Progress;
+        private MetroSuite.MetroNavigationButton Disk_More_Info;
+        private MetroSuite.MetroLabel metroLabel22;
+        private GChartLib.GCircularProgress Disk_H_Progress;
+        private MetroSuite.MetroLabel Disk_F_Total;
+        private MetroSuite.MetroLabel Disk_F_Caption;
+        private MetroSuite.MetroLabel Disk_G_Total;
+        private MetroSuite.MetroLabel Disk_G_Caption;
+        private MetroSuite.MetroLabel Disk_D_Total;
+        private MetroSuite.MetroLabel Disk_D_Caption;
+        private MetroSuite.MetroLabel Disk_C_Total;
+        private MetroSuite.MetroLabel Disk_C_Caption;
+        private MetroSuite.MetroLabel Disk_H_Total;
+        private MetroSuite.MetroLabel Disk_H_Caption;
+        private MetroSuite.MetroLabel Disk_E_Total;
+        private MetroSuite.MetroLabel Disk_E_Caption;
+        private MetroSuite.MetroLabel Disk_D_Used;
+        private MetroSuite.MetroLabel Disk_E_Used;
+        private MetroSuite.MetroLabel Disk_F_Used;
+        private MetroSuite.MetroLabel Disk_G_Used;
+        private MetroSuite.MetroLabel Disk_H_Used;
+        private MetroSuite.MetroLabel Disk_C_Used;
     }
 }
 

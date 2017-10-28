@@ -2,6 +2,8 @@
 using MetroSuite;
 using System;
 using System.Windows.Forms;
+using System.IO;
+using GChartLib;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -98,12 +100,25 @@ namespace ComputerInfo.Define
             RAM_Total_Virtual_Size.Text = String.Format("{0:F2} GB", Virtual_Size);
         }
 
-        public static void PrintGPUInformation()
+        public static void PrintDiskInformation(GCircularProgress[] Progresslist,MetroLabel[] Labellist)
         {
-
+            for (int i = Constants.DISK_MAX_COUNT; i > WMI.Disk.GetVolumeCount; i--)
+            {
+                for (int j = (i * 3) - 1; j > (i * 3) - 4; j--)
+                {
+                    Labellist[j].Text = "Not found";
+                }
+            }
+            DriveInfo[] driver = WMI.Disk.DISK_Volumes;
+            for (int i = 0; i < WMI.Disk.GetVolumeCount; i++)
+            {
+                Labellist[i * 3].Text = driver[i].Name;
+                Labellist[(i * 3) + 1].Text = String.Format("{0:F2} GB", (Double)driver[i].TotalSize / 1024f / 1024f / 1024f);
+            }
+            Graph.Disk_Graph.RefreshGraph(Progresslist, Labellist);
         }
 
-        public static void PrintDiskInformation()
+        public static void PrintGPUInformation()
         {
 
         }

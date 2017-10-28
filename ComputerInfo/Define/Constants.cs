@@ -45,8 +45,17 @@ namespace ComputerInfo.Define
         public static String WMI_DISK = "select * from  Win32_DiskDrive";
         public static String WMI_DISK_MODEL = "Model";
         public static String WMI_DISK_SERIAL_NUMBER = "SerialNumber";
+        public static String WMI_DISK_INDEX = "Index";
+        public static String WMI_DISK_LOGICAL = "select * from  Win32_LogicalDisk";
+        public static String WMI_DISK_LOGICAL_CAPTION = "Caption";
+        public static String WMI_DISK_LOGICAL_VOLUME_NAME = "VolumeName";
+        public static String WMI_DISK_LOGICAL_SERIAL_NUMBER = "VolumeSerialNumber";
         //GPU WMI
 
         //OTHER WMI
+
+        //define
+        public static Int32 DISK_MAX_COUNT = 6;
+
     }
 }

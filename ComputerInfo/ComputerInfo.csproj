@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DiskMoreInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiskMoreInfo.Designer.cs">
+      <DependentUpon>DiskMoreInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Graph\CPU_Graph.cs" />
     <Compile Include="Define\Constants.cs" />
     <Compile Include="Define\Untill.cs" />
@@ -89,6 +95,9 @@
     <Compile Include="WMI\Disk.cs" />
     <Compile Include="WMI\GPU.cs" />
     <Compile Include="WMI\Memory.cs" />
+    <EmbeddedResource Include="DiskMoreInfo.resx">
+      <DependentUpon>DiskMoreInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
