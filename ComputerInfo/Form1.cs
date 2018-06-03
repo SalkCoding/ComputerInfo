@@ -29,10 +29,11 @@ namespace ComputerInfo
             WMI.Bios.Initialization();
             WMI.Memory.Initialization();
             WMI.Disk.Initialization();
+            WMI.GPU.Initialization();
 
             //Auto refresh
-            ComboBoxlist = new MetroComboBox[] { Refresh_Speed,RAM_Refresh_Speed };
-            Switchlist = new MetroSwitch[] { Refresh_Switch,RAM_Auto_Refresh};
+            ComboBoxlist = new MetroComboBox[] { Refresh_Speed, RAM_Refresh_Speed };
+            Switchlist = new MetroSwitch[] { Refresh_Switch, RAM_Auto_Refresh };
             Timerlist = new Timer[] { timer1 };
             //Disk
             Labellist = new MetroLabel[] {
@@ -52,42 +53,28 @@ namespace ComputerInfo
             Untill.PrintBIOSInformation(BIOS_Base_Board_Manufacturer, BIOS_Base_Board_Product, BIOS_Base_Board_Version, BIOS_Release_Date, BIOS_Version, BIOS_Vendor, BIOS_System_Product_Name, BIOS_System_Manufacturer, BIOS_System_Version, BIOS_Logo);
             Untill.PrintRAMInfomation(RAM_Speed, RAM_Voltage, RAM_Physical_Size, RAM_Virtual_Size);
             Untill.PrintDiskInformation(Progresslist, Labellist);
-
+            Untill.PrintGPUInformation(GPU_Manufacturer, GPU_Caption, GPU_Video_Processor_Name, GPU_RAM, GPU_Current_Refresh_Rate, GPU_Max_Refresh_Rate, GPU_Min_Refresh_Rate, GPU_Current_Resolution, GPU_Driver_Version, GPU_Driver_Date, GPU_Logo);
         }
 
         void Refresh_Timer_Setting(int speed)
         {
+            foreach (MetroComboBox combobox in ComboBoxlist)
+            {
+                combobox.SelectedIndex = speed;
+            }
             switch (speed)
             {
                 case 0:
-                    foreach(Timer timer in Timerlist)
-                    {
-                        timer.Interval = 300;
-                    }
-                    foreach(MetroComboBox combobox in ComboBoxlist)
-                    {
-                        combobox.SelectedIndex = 0;
-                    }
+                    foreach (Timer timer in Timerlist)
+                        timer.Interval = 400;
                     break;
                 case 1:
                     foreach (Timer timer in Timerlist)
-                    {
                         timer.Interval = 1000;
-                    }
-                    foreach (MetroComboBox combobox in ComboBoxlist)
-                    {
-                        combobox.SelectedIndex = 1;
-                    }
                     break;
                 case 2:
                     foreach (Timer timer in Timerlist)
-                    {
                         timer.Interval = 4000;
-                    }
-                    foreach (MetroComboBox combobox in ComboBoxlist)
-                    {
-                        combobox.SelectedIndex = 2;
-                    }
                     break;
             }
         }
@@ -97,28 +84,20 @@ namespace ComputerInfo
             if (!ischeck)
             {
                 foreach (Timer timer in Timerlist)
-                {
                     timer.Enabled = true;
-                }
                 foreach (MetroSwitch refresh in Switchlist)
-                {
                     refresh.Checked = false;
-                }
             }
             else
             {
                 foreach (Timer timer in Timerlist)
-                {
                     timer.Enabled = false;
-                }
                 foreach (MetroSwitch refresh in Switchlist)
-                {
                     refresh.Checked = true;
-                }
             }
         }
 
-#region events
+        #region events
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -128,7 +107,7 @@ namespace ComputerInfo
 
         private void Disk_Refresh_Click(object sender, EventArgs e)
         {
-            Disk_Graph.RefreshGraph(Progresslist,Labellist);
+            Disk_Graph.RefreshGraph(Progresslist, Labellist);
         }
 
         private void Refresh_Speed_SelectedIndexChanged(object sender, EventArgs e)
@@ -153,7 +132,8 @@ namespace ComputerInfo
 
         private void Disk_More_Info_Click(object sender, EventArgs e)
         {
-
+            DiskMoreInfo form = new DiskMoreInfo();
+            form.Show();
         }
 
         #endregion

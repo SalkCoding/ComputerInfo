@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Management;
+using ComputerInfo.Define;
+using System.Text.RegularExpressions;
 
 namespace ComputerInfo
 {
@@ -18,6 +21,11 @@ namespace ComputerInfo
         }
 
         private void DiskMoreInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MoreInfo_DiskTree_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
