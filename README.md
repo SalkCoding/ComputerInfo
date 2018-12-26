@@ -1,7 +1,7 @@
 # ComputerInfo
-Get your computer's hardware informations on C#
+Get your computer's hardware informations with C#
 
-feature : this program get CPU and RAM frequently,voltage,usage and mother board info
+feature : this program get CPU and RAM frequently,voltage,usage and mother board info,etc...
 
 Main form skin : MetroFrameWork
 
