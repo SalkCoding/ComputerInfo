@@ -11,6 +11,7 @@ namespace ComputerInfo.Graph
 
         public static void RefreshGraph(GCircularProgress[] Progresslist, MetroLabel[] Labellist)
         {
+            Disk.Refresh();
             int i = 0;
             foreach(DriveInfo drive in Disk.DISK_Volumes)
             {

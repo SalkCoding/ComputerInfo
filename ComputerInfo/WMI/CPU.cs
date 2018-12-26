@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Management;
 using ComputerInfo.Define;
+using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

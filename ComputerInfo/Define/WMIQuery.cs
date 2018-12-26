@@ -60,6 +60,24 @@ namespace ComputerInfo.Define
         public static String WMI_GPU_MIN_REFRESH_RATE = "MinRefreshRate";
         public static String WMI_GPU_VIDEO_PROCESSOR = "VideoProcessor";//Get graphic card name that except company name
         public static String WMI_GPU_VIDEO_MODE_DESCRIPTION = "VideoModeDescription";
+        //OS WMI
+        public static String WMI_OS = "select * from  Win32_OperatingSystem";
+        public static String WMI_OS_NAME = "Caption";
+        public static String WMI_OS_ARCHITECTURE = "OSArchitecture";
+        public static String WMI_OS_BUILD_NUMBER = "BuildNumber";
+        public static String WMI_OS_VERSION = "Version";
+        public static String WMI_OS_SERIALNUMBER = "SerialNumber";
+        public static String WMI_OS_LASTBOOTUPTIME = "LastBootUpTime";
+        public static String WMI_OS_CONTRY_CODE = "CountryCode";
+        public static String WMI_OS_CURRENT_TIME_ZONE = "CurrentTimeZone";
+        public static String WMI_OS_MUI_LANGUAGES = "MUILanguages";
+        public static String WMI_OS_LANGUAGE = "OSLanguage";
+
+        
+        public static String REG_OS = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion";
+        public static String REG_OS_INSTALLTIME = "InstallTime";
+        public static String REG_OS_INSTALLDATE = "InstallDate";
+        //public static String REG_IS_
         //OTHER WMI
     }
 }

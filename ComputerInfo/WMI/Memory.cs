@@ -22,8 +22,8 @@ namespace ComputerInfo.WMI
                     continue;
                 }
             }
-            RAM_Pysical_Size = info.TotalPhysicalMemory;
-            RAM_Virtual_Size = info.TotalVirtualMemory;
+            RAM_Pysical_Size = info.TotalPhysicalMemory;//info.TotalPhysicalMemory == 0 ? 1 : info.TotalPhysicalMemory;
+            RAM_Virtual_Size = info.TotalVirtualMemory;//info.TotalVirtualMemory == 0 ? 1 : info.TotalVirtualMemory;
         }
 
         public static UInt64 RAM_Pysical_Size { get; private set; }
