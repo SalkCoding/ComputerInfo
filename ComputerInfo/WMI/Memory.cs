@@ -16,14 +16,15 @@ namespace ComputerInfo.WMI
                 {
                     RAM_Speed = wmi[WMIQuery.WMI_RAM_SPEED].ToString();
                     RAM_Voltage = wmi[WMIQuery.WMI_RAM_VOLTAGE].ToString().Insert(1, ".");
+                    RAM_Manufacturer = wmi[WMIQuery.WMI_RAM_MANUFACTURER].ToString();
                 }
                 catch
                 {
                     continue;
                 }
             }
-            RAM_Pysical_Size = info.TotalPhysicalMemory;
-            RAM_Virtual_Size = info.TotalVirtualMemory;
+            RAM_Pysical_Size = info.TotalPhysicalMemory;//info.TotalPhysicalMemory == 0 ? 1 : info.TotalPhysicalMemory;
+            RAM_Virtual_Size = info.TotalVirtualMemory;//info.TotalVirtualMemory == 0 ? 1 : info.TotalVirtualMemory;
         }
 
         public static UInt64 RAM_Pysical_Size { get; private set; }
@@ -37,5 +38,8 @@ namespace ComputerInfo.WMI
         public static String RAM_Speed { get; private set; }
 
         public static String RAM_Voltage { get; private set; }
+
+        public static String RAM_Manufacturer { get; private set; }
+
     }
 }

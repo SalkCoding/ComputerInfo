@@ -16,3 +16,53 @@ C:\Users\josan\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\ob
 C:\Users\josan\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csprojAssemblyReference.cache
 C:\Users\josan\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CopyComplete
 C:\Users\josan\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MaterialSkin.dll
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.exe.config
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.exe
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.pdb
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\bin\Debug\MaterialSkin.dll
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.Design.dll
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.dll
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csprojAssemblyReference.cache
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.DiskMoreInfo.resources
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Form1.resources
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Properties.Resources.resources
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.GenerateResource.cache
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CopyComplete
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.exe
+C:\Users\user\Desktop\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.pdb
+J:\C#\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.exe.config
+J:\C#\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.exe
+J:\C#\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.pdb
+J:\C#\ComputerInfo\ComputerInfo\bin\Debug\MaterialSkin.dll
+J:\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.Design.dll
+J:\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.dll
+J:\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.Fonts.dll
+J:\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csprojAssemblyReference.cache
+J:\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.DiskMoreInfo.resources
+J:\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Form1.resources
+J:\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Properties.Resources.resources
+J:\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.GenerateResource.cache
+J:\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CoreCompileInputs.cache
+J:\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CopyComplete
+J:\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.exe
+J:\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.pdb
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.exe.config
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.exe
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.pdb
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\GChartLib.dll
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MaterialSkin.dll
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.Design.dll
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.dll
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroSuite 2.0.dll
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csprojAssemblyReference.cache
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.DiskMoreInfo.resources
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Form1.resources
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Properties.Resources.resources
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.GenerateResource.cache
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CoreCompileInputs.cache
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CopyComplete
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.exe
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.pdb

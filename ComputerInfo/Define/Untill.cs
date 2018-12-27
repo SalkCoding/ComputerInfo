@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using System.IO;
 using GChartLib;
 using ComputerInfo.WMI;
+using System.Collections;
+using System.Management;
 
 namespace ComputerInfo.Define
 {
@@ -31,7 +33,8 @@ namespace ComputerInfo.Define
             MetroLabel CPU_L2Cache_Label,
             MetroLabel CPU_L3Cache_Label,
             MetroLabel CPU_Core_Label,
-            MetroLabel CPU_Thread_Label)
+            MetroLabel CPU_Thread_Label
+            )
         {
             CPU_Name_Label.Text = CPU.CPU_Name;
             CPU_Current_Clock_Label.Text = String.Format("{0:F2} Ghz", (CPU.CPU_Current_Clock / 1000f));
@@ -52,7 +55,8 @@ namespace ComputerInfo.Define
             MetroLabel BIOS_System_Product_Name,
             MetroLabel BIOS_System_Manufacturer,
             MetroLabel BIOS_System_Version,
-            WebBrowser BIOS_Logo)
+            WebBrowser BIOS_Logo
+            )
         {
             BIOS_Base_Board_Manufacturer.Text = Bios.BIOS_Base_Manufacturer;
             BIOS_Base_Board_Product.Text = Bios.BIOS_Base_Product;
@@ -83,13 +87,16 @@ namespace ComputerInfo.Define
         }
 
         public static void PrintRAMInfomation(
+            MetroLabel RAM_Manafacturer,
             MetroLabel RAM_Speed,
             MetroLabel RAM_Voltage,
             MetroLabel RAM_Total_Physical_Size,
-            MetroLabel RAM_Total_Virtual_Size)
+            MetroLabel RAM_Total_Virtual_Size
+            )
         {
             Double Pysical_Size = (Memory.RAM_Pysical_Size / 1024f / 1024f / 1024f);
             Double Virtual_Size = (Memory.RAM_Pysical_Size / 1024f / 1024f / 1024f);
+            RAM_Manafacturer.Text = Memory.RAM_Manufacturer;
             RAM_Speed.Text = String.Format("{0} Mhz", Memory.RAM_Speed);
             RAM_Voltage.Text = String.Format("{0} V", Memory.RAM_Voltage);
             RAM_Total_Physical_Size.Text = String.Format("{0:F2} GB", Pysical_Size);
@@ -105,8 +112,11 @@ namespace ComputerInfo.Define
                     Labellist[j].Text = "Not found";
                 }
             }
-            DriveInfo[] driver = Disk.DISK_Volumes;
-            for (int i = 0; i < Disk.GetVolumeCount; i++)
+            DriveInfo[] driver = Disk.DISK_Volumes.ToArray();
+            int count = Disk.GetVolumeCount;
+            if (count > 6)
+                count = 6;
+            for (int i = 0; i < count; i++)
             {
                 Labellist[i * 3].Text = driver[i].Name;
                 Labellist[(i * 3) + 1].Text = String.Format("{0:F2} GB", (Double)driver[i].TotalSize / 1024f / 1024f / 1024f);
@@ -125,10 +135,14 @@ namespace ComputerInfo.Define
             MetroLabel GPU_Current_Resolution,
             MetroLabel GPU_Driver_Version,
             MetroLabel GPU_Driver_Date,
-            WebBrowser GPU_Logo)
+            WebBrowser GPU_Logo
+            )
         {
-            if (GPU.GPU_Adapter_Compatiability.ToLower().Equals("nvidia"))
+            String company = GPU.GPU_Adapter_Compatiability.ToLower();
+            if (company.Contains("nvidia"))
                 GPU_Logo.Url = new Uri(Constants.NVIDIA_LOGO);
+            else if (company.Contains("intel"))
+                GPU_Logo.Url = new Uri(Constants.INTEL_LOGO);
             else
                 GPU_Logo.Url = new Uri(Constants.AMD_LOGO);
             GPU_Manufacturer.Text = GPU.GPU_Adapter_Compatiability;
@@ -144,14 +158,182 @@ namespace ComputerInfo.Define
             GPU_Driver_Date.Text = String.Format("{0}/{1}/{2}", driverTime.Month, driverTime.Day, driverTime.Year);
         }
 
-        public static void PrintOSInformation()
+        public static void PrintOSInformation(
+            MetroLabel OS_Caption,
+            MetroLabel OS_Architecture,
+            MetroLabel OS_BuildNumber,
+            MetroLabel OS_Version,
+            MetroLabel OS_SerialNumber,
+            MetroLabel OS_ProductKey,
+            MetroLabel OS_ContryCode,
+            MetroLabel OS_CurrentTimeZoneCode,
+            MetroLabel OS_MUILanuagesCode,
+            MetroLabel OS_LanguageCode,
+            MetroLabel OS_InstallTime,
+            MetroLabel OS_LastBootUpTime
+            )
         {
-
+            OS_Caption.Text = WMI.OperatingSystem.OS_Caption;
+            OS_Architecture.Text = WMI.OperatingSystem.OS_Architecture;
+            OS_BuildNumber.Text = WMI.OperatingSystem.OS_Build_Number;
+            OS_Version.Text = WMI.OperatingSystem.OS_Version;
+            OS_SerialNumber.Text = WMI.OperatingSystem.OS_Version;
+            try
+            {
+                OS_ProductKey.Text = GetWindowsProductKey();
+            }
+            catch { }
+            OS_ContryCode.Text = WMI.OperatingSystem.OS_Contry_Code;
+            OS_CurrentTimeZoneCode.Text = WMI.OperatingSystem.OS_Current_Time_Zone;
+            OS_MUILanuagesCode.Text = WMI.OperatingSystem.OS_MUI_Languages;
+            OS_LanguageCode.Text = WMI.OperatingSystem.OS_Language;
+            DateTime time = WMI.OperatingSystem.OS_Install_Time;
+            OS_InstallTime.Text = time.ToString();
+            DateTime time1 = ManagementDateTimeConverter.ToDateTime(WMI.OperatingSystem.OS_Last_Boot_Up_Time);
+            OS_LastBootUpTime.Text = time1.ToString();
         }
 
-        public static void PrintOtherInformation()
+        public static void PrintSummaryInformation(
+            MetroLabel CPU_Caption,
+            MetroLabel CPU_Clock,
+            MetroLabel CPU_Voltage,
+            MetroLabel RAM_Clock,
+            MetroLabel RAM_Size,
+            MetroLabel MB_Caption,
+            MetroLabel MB_System_Caption,
+            MetroLabel MB_Manafucturer,
+            MetroLabel GPU_Caption,
+            MetroLabel GPU_RAM_Size,
+            MetroLabel GPU_Manafacturer,
+            MetroLabel OS_Cpation,
+            MetroLabel OS_Architecture,
+            MetroLabel OS_Build_Number,
+            MetroLabel OS_Version,
+            MetroLabel OS_Install_Time,
+            MetroLabel OS_Last_Time_Up_Boot_Time
+            )
         {
+            CPU_Caption.Text = CPU.CPU_Name;
+            CPU_Clock.Text = String.Format("{0:F2} Ghz", (CPU.CPU_Current_Clock / 1000f));
+            CPU_Voltage.Text = String.Format("{0:F3} V", CPU.CPU_Voltage);
+            Double Pysical_Size = (Memory.RAM_Pysical_Size / 1024f / 1024f / 1024f);
+            RAM_Clock.Text = String.Format("{0} Mhz", Memory.RAM_Speed);
+            RAM_Size.Text = String.Format("{0:F2} GB", Pysical_Size);
+            MB_Caption.Text = Bios.BIOS_Base_Product;
+            MB_Manafucturer.Text = Bios.BIOS_Base_Manufacturer;
+            MB_System_Caption.Text = Bios.BIOS_System_Product_Name;
+            GPU_Caption.Text = GPU.GPU_Caption;
+            GPU_RAM_Size.Text = String.Format("{0:F2} GB", (Convert.ToInt64(GPU.GPU_Adapter_RAM) / 1024f / 1024f / 1024f));
+            GPU_Manafacturer.Text = GPU.GPU_Adapter_Compatiability;
+            OS_Cpation.Text = WMI.OperatingSystem.OS_Caption;
+            OS_Architecture.Text = WMI.OperatingSystem.OS_Architecture;
+            OS_Build_Number.Text = WMI.OperatingSystem.OS_Build_Number;
+            OS_Version.Text = WMI.OperatingSystem.OS_Version;
+            DateTime time = WMI.OperatingSystem.OS_Install_Time;
+            OS_Install_Time.Text = time.ToString();
+            DateTime time1 = ManagementDateTimeConverter.ToDateTime(WMI.OperatingSystem.OS_Last_Boot_Up_Time);
+            OS_Last_Time_Up_Boot_Time.Text = time1.ToString();
+        }
 
+        public static string DecodeProductKeyWin8AndUp(byte[] digitalProductId)
+        {
+            var key = String.Empty;
+            const int keyOffset = 52;
+            var isWin8 = (byte)((digitalProductId[66] / 6) & 1);
+            digitalProductId[66] = (byte)((digitalProductId[66] & 0xf7) | (isWin8 & 2) * 4);
+
+            // Possible alpha-numeric characters in product key.
+            const string digits = "BCDFGHJKMPQRTVWXY2346789";
+            int last = 0;
+            for (var i = 24; i >= 0; i--)
+            {
+                var current = 0;
+                for (var j = 14; j >= 0; j--)
+                {
+                    current = current * 256;
+                    current = digitalProductId[j + keyOffset] + current;
+                    digitalProductId[j + keyOffset] = (byte)(current / 24);
+                    current = current % 24;
+                    last = current;
+                }
+                key = digits[current] + key;
+            }
+            var keypart1 = key.Substring(1, last);
+            const string insert = "N";
+            key = key.Substring(1).Replace(keypart1, keypart1 + insert);
+            if (last == 0)
+                key = insert + key;
+            for (var i = 5; i < key.Length; i += 6)
+            {
+                key = key.Insert(i, "-");
+            }
+            return key;
+        }
+
+        public static string DecodeProductKey(byte[] digitalProductId)
+        {
+            // Offset of first byte of encoded product key in 
+            //  'DigitalProductIdxxx" REG_BINARY value. Offset = 34H.
+            const int keyStartIndex = 52;
+            // Offset of last byte of encoded product key in 
+            //  'DigitalProductIdxxx" REG_BINARY value. Offset = 43H.
+            const int keyEndIndex = keyStartIndex + 15;
+            // Possible alpha-numeric characters in product key.
+            char[] digits = new char[]
+      {
+        'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'M', 'P', 'Q', 'R',
+        'T', 'V', 'W', 'X', 'Y', '2', '3', '4', '6', '7', '8', '9',
+      };
+            // Length of decoded product key
+            const int decodeLength = 29;
+            // Length of decoded product key in byte-form.
+            // Each byte represents 2 chars.
+            const int decodeStringLength = 15;
+            // Array of containing the decoded product key.
+            char[] decodedChars = new char[decodeLength];
+            // Extract byte 52 to 67 inclusive.
+            ArrayList hexPid = new ArrayList();
+            for (int i = keyStartIndex; i <= keyEndIndex; i++)
+            {
+                hexPid.Add(digitalProductId[i]);
+            }
+            for (int i = decodeLength - 1; i >= 0; i--)
+            {
+                // Every sixth char is a separator.
+                if ((i + 1) % 6 == 0)
+                {
+                    decodedChars[i] = '-';
+                }
+                else
+                {
+                    // Do the actual decoding.
+                    int digitMapIndex = 0;
+                    for (int j = decodeStringLength - 1; j >= 0; j--)
+                    {
+                        int byteValue = (digitMapIndex << 8) | (byte)hexPid[j];
+                        hexPid[j] = (byte)(byteValue / 24);
+                        digitMapIndex = byteValue % 24;
+                        decodedChars[i] = digits[digitMapIndex];
+                    }
+                }
+            }
+            return new string(decodedChars);
+        }
+
+        public static string GetWindowsProductKey()
+        {
+            var key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine,
+                                          RegistryView.Default);
+            const string keyPath = @"Software\Microsoft\Windows NT\CurrentVersion";
+            var digitalProductId = (byte[])key.OpenSubKey(keyPath).GetValue("DigitalProductId4");
+
+            var isWin8OrUp =
+                (Environment.OSVersion.Version.Major == 6 && System.Environment.OSVersion.Version.Minor >= 2)
+                ||
+                (Environment.OSVersion.Version.Major > 6);
+
+            var productKey = isWin8OrUp ? DecodeProductKeyWin8AndUp(digitalProductId) : DecodeProductKey(digitalProductId);
+            return productKey;
         }
 
     }
