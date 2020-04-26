@@ -9,7 +9,7 @@ namespace ComputerInfo.WMI
 {
     public class CPU
     {
-        public static void Initialization()
+        public CPU()
         {
             foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.WMI_CPU).Get())
             {

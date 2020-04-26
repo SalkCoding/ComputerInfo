@@ -5,14 +5,14 @@ using System.Diagnostics;
 
 namespace ComputerInfo.Graph
 {
-    class CPU_Graph
+    class CPUGraph
     {
        
-        private static PerformanceCounter cpuCounter;
+        private PerformanceCounter cpuCounter;
 
         public MetroTrackerPath GraphPath { get; } = new MetroTrackerPath();
 
-        public CPU_Graph()
+        public CPUGraph()
         {
             GraphPath.Name = "CPU";
             GraphPath.Style = MetroTrackerPath.PathStyle.CPU;

@@ -6,19 +6,17 @@ using ComputerInfo.WMI;
 
 namespace ComputerInfo.Graph
 {
-    class Disk_Graph
+    class DiskGraph
     {
 
-        public static void RefreshGraph(GCircularProgress[] Progresslist, MetroLabel[] Labellist)
+        public void RefreshGraph(Disk disk, GCircularProgress[] progressList)
         {
-            Disk.Refresh();
             int i = 0;
-            foreach(DriveInfo drive in Disk.DISK_Volumes)
+            foreach (DriveInfo drive in disk.VolumeList)
             {
-                if (i >= Disk.GetVolumeCount)
+                if (i >= disk.VolumeCount)
                     break;
-                Progresslist[i].Value = (Int32)(((drive.TotalSize - drive.TotalFreeSpace) / (Double)drive.TotalSize) * 100);
-                Labellist[i*3 + 2].Text = String.Format("{0:F2} GB", drive.TotalFreeSpace / 1024f / 1024f / 1024f);
+                progressList[i].Value = (Int32)(((drive.TotalSize - drive.TotalFreeSpace) / (Double)drive.TotalSize) * 100);
                 i++;
             }
         }

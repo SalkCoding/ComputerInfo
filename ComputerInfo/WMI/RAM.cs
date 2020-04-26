@@ -4,11 +4,11 @@ using System.Management;
 
 namespace ComputerInfo.WMI
 {
-    class Memory
+    class RAM
     {
         private static Microsoft.VisualBasic.Devices.ComputerInfo info = new Microsoft.VisualBasic.Devices.ComputerInfo();
 
-        public static void Initialization()
+        public RAM()
         {
             foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.WMI_RAM).Get())
             {

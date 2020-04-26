@@ -62,7 +62,7 @@ C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerIn
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Form1.resources
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Properties.Resources.resources
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.GenerateResource.cache
-C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CoreCompileInputs.cache
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CopyComplete
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.exe
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.pdb
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CoreCompileInputs.cache

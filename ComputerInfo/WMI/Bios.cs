@@ -6,7 +6,7 @@ namespace ComputerInfo.WMI
 {
     public class Bios
     {
-        public static void Initialization()
+        public Bios()
         {
             BIOS_Base_Manufacturer = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_BASE_MANUFACTURER);
             BIOS_Base_Product = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_BASE_PRODUCT);
@@ -19,22 +19,22 @@ namespace ComputerInfo.WMI
             BIOS_System_Version = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_SYSTEM_VERSION);
         }
 
-        public static String BIOS_Base_Manufacturer { get; private set; }
+        public String BIOS_Base_Manufacturer { get; private set; }
 
-        public static String BIOS_Base_Product { get; private set; }
+        public String BIOS_Base_Product { get; private set; }
 
-        public static String BIOS_Base_Version { get; private set; }
+        public String BIOS_Base_Version { get; private set; }
 
-        public static String BIOS_Release_Date { get; private set; }
+        public String BIOS_Release_Date { get; private set; }
 
-        public static String BIOS_Version { get; private set; }
+        public String BIOS_Version { get; private set; }
 
-        public static String BIOS_Vendor { get; private set; }
+        public String BIOS_Vendor { get; private set; }
 
-        public static String BIOS_System_Product_Name { get; private set; }
+        public String BIOS_System_Product_Name { get; private set; }
 
-        public static String BIOS_System_Manufacturer { get; private set; }
+        public String BIOS_System_Manufacturer { get; private set; }
 
-        public static String BIOS_System_Version { get; private set; }
+        public String BIOS_System_Version { get; private set; }
     }
 }
