@@ -13,9 +13,9 @@ using System.Text.RegularExpressions;
 
 namespace ComputerInfo
 {
-    public partial class DiskMoreInfo : MetroFramework.Forms.MetroForm
+    public partial class DetailDiskInfo : MetroFramework.Forms.MetroForm
     {
-        public DiskMoreInfo()
+        public DetailDiskInfo()
         {
             InitializeComponent();
         }

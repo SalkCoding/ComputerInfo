@@ -1,11 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Management;
 using ComputerInfo.Define;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Win32;
 
 namespace ComputerInfo.WMI
 {
@@ -13,59 +9,54 @@ namespace ComputerInfo.WMI
     {
         public OS()
         {
-            foreach (ManagementBaseObject wmi in new ManagementObjectSearcher(WMIQuery.WMI_OS).Get())
+            foreach (ManagementBaseObject wmi in new ManagementObjectSearcher(WMIQuery.OS.Query).Get())
             {
-                String[] MUI= null;
+                String[] MUI;
                 try
                 {
-                    OS_Caption = wmi[WMIQuery.WMI_OS_NAME].ToString();
-                    OS_Architecture = wmi[WMIQuery.WMI_OS_ARCHITECTURE].ToString();
-                    OS_Build_Number = wmi[WMIQuery.WMI_OS_BUILD_NUMBER].ToString();
-                    OS_Version = wmi[WMIQuery.WMI_OS_VERSION].ToString();
-                    OS_Serial_Number = wmi[WMIQuery.WMI_OS_SERIALNUMBER].ToString();
-                    OS_Last_Boot_Up_Time = wmi[WMIQuery.WMI_OS_LASTBOOTUPTIME].ToString();
-                    OS_Contry_Code = wmi[WMIQuery.WMI_OS_CONTRY_CODE].ToString();
-                    OS_Current_Time_Zone = wmi[WMIQuery.WMI_OS_CURRENT_TIME_ZONE].ToString();
-                    MUI = (String[])wmi[WMIQuery.WMI_OS_MUI_LANGUAGES];
-                    OS_Language = wmi[WMIQuery.WMI_OS_LANGUAGE].ToString();
-                    OS_Install_Time = ManagementDateTimeConverter.ToDateTime(wmi[WMIQuery.WMI_OS_INSTALL_DATE].ToString());
+                    Caption = wmi[WMIQuery.OS.Caption].ToString();
+                    Architecture = wmi[WMIQuery.OS.Architecture].ToString();
+                    BuildNumber = wmi[WMIQuery.OS.BuildNumber].ToString();
+                    Version = wmi[WMIQuery.OS.Version].ToString();
+                    SerialNumber = wmi[WMIQuery.OS.SerialNumber].ToString();
+                    LastBootUpTime = wmi[WMIQuery.OS.LastBootUpTime].ToString();
+                    ContryCode = wmi[WMIQuery.OS.CountryCode].ToString();
+                    CurrentTimeZone = wmi[WMIQuery.OS.CurrentTimeZone].ToString();
+                    MUI = (String[])wmi[WMIQuery.OS.MUILanguages];
+                    Language = wmi[WMIQuery.OS.Language].ToString();
+                    InstallTime = ManagementDateTimeConverter.ToDateTime(wmi[WMIQuery.OS.InstallDate].ToString());
                 }
                 catch
                 {
                     continue;
                 }
-                OS_MUI_Languages = "";
-                if (MUI.Length <= 1)
-                    OS_MUI_Languages = MUI[0];
-                else
-                    foreach (String str in MUI)
-                        OS_MUI_Languages += str + " ";
+                MUILanguages = String.Join(", ",MUI);
             }
         }
 
-        public String OS_Caption { get; set; }
+        public String Caption { get; set; }
 
-        public String OS_Architecture { get; set; }
+        public String Architecture { get; set; }
 
-        public String OS_Build_Number { get; set; }
+        public String BuildNumber { get; set; }
 
-        public String OS_Version { get; set; }
+        public String Version { get; set; }
 
-        public String OS_Serial_Number { get; set; }
+        public String SerialNumber { get; set; }
 
-        public String OS_Product_Key { get; set; }
+        public String ProductKey { get; set; }
 
-        public String OS_Contry_Code { get; set; }
+        public String ContryCode { get; set; }
 
-        public String OS_Current_Time_Zone { get; set; }
+        public String CurrentTimeZone { get; set; }
 
-        public String OS_MUI_Languages { get; set; }
+        public String MUILanguages { get; set; }
 
-        public String OS_Language { get; set; }
+        public String Language { get; set; }
 
-        public String OS_Last_Boot_Up_Time { get; set; }
+        public String LastBootUpTime { get; set; }
 
-        public DateTime OS_Install_Time { get; set; }
+        public DateTime InstallTime { get; set; }
 
     }
 }

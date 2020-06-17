@@ -83,11 +83,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Define\WMIQuery.cs" />
-    <Compile Include="DiskMoreInfo.cs">
+    <Compile Include="DetailDiskInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DiskMoreInfo.Designer.cs">
-      <DependentUpon>DiskMoreInfo.cs</DependentUpon>
+    <Compile Include="DetailDiskInfo.Designer.cs">
+      <DependentUpon>DetailDiskInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Graph\CPUGraph.cs" />
     <Compile Include="Define\Constants.cs" />
@@ -108,8 +108,8 @@
     <Compile Include="WMI\GPU.cs" />
     <Compile Include="WMI\RAM.cs" />
     <Compile Include="WMI\OS.cs" />
-    <EmbeddedResource Include="DiskMoreInfo.resx">
-      <DependentUpon>DiskMoreInfo.cs</DependentUpon>
+    <EmbeddedResource Include="DetailDiskInfo.resx">
+      <DependentUpon>DetailDiskInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

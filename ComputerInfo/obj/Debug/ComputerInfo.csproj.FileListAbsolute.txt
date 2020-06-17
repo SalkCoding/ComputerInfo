@@ -58,7 +58,6 @@ C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerIn
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroSuite 2.0.dll
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csprojAssemblyReference.cache
-C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.DiskMoreInfo.resources
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Form1.resources
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Properties.Resources.resources
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.GenerateResource.cache
@@ -66,3 +65,4 @@ C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerIn
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.exe
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.pdb
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CoreCompileInputs.cache
+C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.DetailDiskInfo.resources

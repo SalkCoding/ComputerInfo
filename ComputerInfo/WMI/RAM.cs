@@ -6,40 +6,40 @@ namespace ComputerInfo.WMI
 {
     class RAM
     {
-        private static Microsoft.VisualBasic.Devices.ComputerInfo info = new Microsoft.VisualBasic.Devices.ComputerInfo();
+        private static readonly Microsoft.VisualBasic.Devices.ComputerInfo info = new Microsoft.VisualBasic.Devices.ComputerInfo();
 
         public RAM()
         {
-            foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.WMI_RAM).Get())
+            foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.RAM.Query).Get())
             {
                 try
                 {
-                    RAM_Speed = wmi[WMIQuery.WMI_RAM_SPEED].ToString();
-                    RAM_Voltage = wmi[WMIQuery.WMI_RAM_VOLTAGE].ToString().Insert(1, ".");
-                    RAM_Manufacturer = wmi[WMIQuery.WMI_RAM_MANUFACTURER].ToString();
+                    Speed = wmi[WMIQuery.RAM.Speed].ToString();
+                    Voltage = wmi[WMIQuery.RAM.ConfiguredVoltage].ToString().Insert(1, ".");
+                    Manufacturer = wmi[WMIQuery.RAM.Manufacturer].ToString();
                 }
                 catch
                 {
                     continue;
                 }
             }
-            RAM_Pysical_Size = info.TotalPhysicalMemory;//info.TotalPhysicalMemory == 0 ? 1 : info.TotalPhysicalMemory;
-            RAM_Virtual_Size = info.TotalVirtualMemory;//info.TotalVirtualMemory == 0 ? 1 : info.TotalVirtualMemory;
+            PysicalSize = info.TotalPhysicalMemory;
+            VirtualSize = info.TotalVirtualMemory;
         }
 
-        public static UInt64 RAM_Pysical_Size { get; private set; }
+        public UInt64 PysicalSize { get; private set; }
 
-        public static UInt64 RAM_Virtual_Size { get; private set; }
+        public UInt64 VirtualSize { get; private set; }
 
-        public static UInt64 RAM_Available_Physical => info.AvailablePhysicalMemory;
+        public UInt64 AvailablePhysicalSize => info.AvailablePhysicalMemory;
 
-        public static UInt64 RAM_Available_Virtual => info.AvailableVirtualMemory;
+        public UInt64 AvailableVirtualSize => info.AvailableVirtualMemory;
 
-        public static String RAM_Speed { get; private set; }
+        public String Speed { get; private set; }
 
-        public static String RAM_Voltage { get; private set; }
+        public String Voltage { get; private set; }
 
-        public static String RAM_Manufacturer { get; private set; }
+        public String Manufacturer { get; private set; }
 
     }
 }

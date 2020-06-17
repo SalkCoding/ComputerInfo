@@ -89,8 +89,6 @@
             this.OS_CurrentTimeZone = new MetroSuite.MetroLabel();
             this.OS_ContryCode = new MetroSuite.MetroLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroLabel12 = new MetroSuite.MetroLabel();
-            this.OS_ProductKey = new MetroSuite.MetroLabel();
             this.metroLabel16 = new MetroSuite.MetroLabel();
             this.metroLabel20 = new MetroSuite.MetroLabel();
             this.OS_SerialNumber = new MetroSuite.MetroLabel();
@@ -128,6 +126,8 @@
             this.GPU_Caption = new MetroSuite.MetroLabel();
             this.GPU_Logo = new System.Windows.Forms.WebBrowser();
             this.Disk_Tab = new System.Windows.Forms.TabPage();
+            this.metroLabel51 = new MetroSuite.MetroLabel();
+            this.Disk_More_Info = new MetroSuite.MetroNavigationButton();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.Disk_H_Status = new MetroSuite.MetroLabel();
             this.Disk_G_Status = new MetroSuite.MetroLabel();
@@ -736,7 +736,7 @@
             this.groupBox3.Controls.Add(this.OS_LastBootUpTime);
             this.groupBox3.Controls.Add(this.OS_InstallTime);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox3.Location = new System.Drawing.Point(6, 303);
+            this.groupBox3.Location = new System.Drawing.Point(6, 282);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(892, 84);
             this.groupBox3.TabIndex = 45;
@@ -794,7 +794,7 @@
             this.groupBox2.Controls.Add(this.OS_CurrentTimeZone);
             this.groupBox2.Controls.Add(this.OS_ContryCode);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox2.Location = new System.Drawing.Point(6, 175);
+            this.groupBox2.Location = new System.Drawing.Point(6, 154);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(892, 122);
             this.groupBox2.TabIndex = 44;
@@ -883,8 +883,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.metroLabel12);
-            this.groupBox1.Controls.Add(this.OS_ProductKey);
             this.groupBox1.Controls.Add(this.metroLabel16);
             this.groupBox1.Controls.Add(this.metroLabel20);
             this.groupBox1.Controls.Add(this.OS_SerialNumber);
@@ -898,38 +896,16 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(892, 163);
+            this.groupBox1.Size = new System.Drawing.Size(892, 142);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Basic information of OS";
-            // 
-            // metroLabel12
-            // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel12.Location = new System.Drawing.Point(60, 130);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(99, 21);
-            this.metroLabel12.TabIndex = 51;
-            this.metroLabel12.Text = "Product key :";
-            this.metroLabel12.Visible = false;
-            // 
-            // OS_ProductKey
-            // 
-            this.OS_ProductKey.AutoSize = true;
-            this.OS_ProductKey.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.OS_ProductKey.Location = new System.Drawing.Point(165, 130);
-            this.OS_ProductKey.Name = "OS_ProductKey";
-            this.OS_ProductKey.Size = new System.Drawing.Size(68, 21);
-            this.OS_ProductKey.TabIndex = 43;
-            this.OS_ProductKey.Text = "Unknow";
-            this.OS_ProductKey.Visible = false;
             // 
             // metroLabel16
             // 
             this.metroLabel16.AutoSize = true;
             this.metroLabel16.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel16.Location = new System.Drawing.Point(60, 109);
+            this.metroLabel16.Location = new System.Drawing.Point(6, 109);
             this.metroLabel16.Name = "metroLabel16";
             this.metroLabel16.Size = new System.Drawing.Size(115, 21);
             this.metroLabel16.TabIndex = 50;
@@ -939,7 +915,7 @@
             // 
             this.metroLabel20.AutoSize = true;
             this.metroLabel20.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel20.Location = new System.Drawing.Point(60, 88);
+            this.metroLabel20.Location = new System.Drawing.Point(6, 88);
             this.metroLabel20.Name = "metroLabel20";
             this.metroLabel20.Size = new System.Drawing.Size(69, 21);
             this.metroLabel20.TabIndex = 49;
@@ -949,7 +925,7 @@
             // 
             this.OS_SerialNumber.AutoSize = true;
             this.OS_SerialNumber.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.OS_SerialNumber.Location = new System.Drawing.Point(181, 109);
+            this.OS_SerialNumber.Location = new System.Drawing.Point(127, 109);
             this.OS_SerialNumber.Name = "OS_SerialNumber";
             this.OS_SerialNumber.Size = new System.Drawing.Size(68, 21);
             this.OS_SerialNumber.TabIndex = 41;
@@ -959,7 +935,7 @@
             // 
             this.metroLabel58.AutoSize = true;
             this.metroLabel58.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel58.Location = new System.Drawing.Point(60, 67);
+            this.metroLabel58.Location = new System.Drawing.Point(6, 67);
             this.metroLabel58.Name = "metroLabel58";
             this.metroLabel58.Size = new System.Drawing.Size(111, 21);
             this.metroLabel58.TabIndex = 48;
@@ -979,7 +955,7 @@
             // 
             this.metroLabel60.AutoSize = true;
             this.metroLabel60.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroLabel60.Location = new System.Drawing.Point(60, 46);
+            this.metroLabel60.Location = new System.Drawing.Point(6, 46);
             this.metroLabel60.Name = "metroLabel60";
             this.metroLabel60.Size = new System.Drawing.Size(101, 21);
             this.metroLabel60.TabIndex = 47;
@@ -989,7 +965,7 @@
             // 
             this.OS_Version.AutoSize = true;
             this.OS_Version.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.OS_Version.Location = new System.Drawing.Point(135, 88);
+            this.OS_Version.Location = new System.Drawing.Point(81, 88);
             this.OS_Version.Name = "OS_Version";
             this.OS_Version.Size = new System.Drawing.Size(68, 21);
             this.OS_Version.TabIndex = 39;
@@ -999,7 +975,7 @@
             // 
             this.OS_BuildNumber.AutoSize = true;
             this.OS_BuildNumber.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.OS_BuildNumber.Location = new System.Drawing.Point(177, 67);
+            this.OS_BuildNumber.Location = new System.Drawing.Point(123, 67);
             this.OS_BuildNumber.Name = "OS_BuildNumber";
             this.OS_BuildNumber.Size = new System.Drawing.Size(68, 21);
             this.OS_BuildNumber.TabIndex = 37;
@@ -1009,7 +985,7 @@
             // 
             this.OS_Architecture.AutoSize = true;
             this.OS_Architecture.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.OS_Architecture.Location = new System.Drawing.Point(167, 46);
+            this.OS_Architecture.Location = new System.Drawing.Point(113, 46);
             this.OS_Architecture.Name = "OS_Architecture";
             this.OS_Architecture.Size = new System.Drawing.Size(68, 21);
             this.OS_Architecture.TabIndex = 35;
@@ -1309,6 +1285,8 @@
             // 
             // Disk_Tab
             // 
+            this.Disk_Tab.Controls.Add(this.metroLabel51);
+            this.Disk_Tab.Controls.Add(this.Disk_More_Info);
             this.Disk_Tab.Controls.Add(this.groupBox11);
             this.Disk_Tab.Controls.Add(this.metroLabel23);
             this.Disk_Tab.Controls.Add(this.Disk_Refresh);
@@ -1318,6 +1296,42 @@
             this.Disk_Tab.TabIndex = 2;
             this.Disk_Tab.Text = "Storage";
             this.Disk_Tab.UseVisualStyleBackColor = true;
+            // 
+            // metroLabel51
+            // 
+            this.metroLabel51.AutoSize = true;
+            this.metroLabel51.Enabled = false;
+            this.metroLabel51.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.metroLabel51.Location = new System.Drawing.Point(864, 3);
+            this.metroLabel51.Name = "metroLabel51";
+            this.metroLabel51.Size = new System.Drawing.Size(37, 15);
+            this.metroLabel51.TabIndex = 33;
+            this.metroLabel51.Text = "Detail";
+            this.metroLabel51.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // Disk_More_Info
+            // 
+            this.Disk_More_Info.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.Disk_More_Info.ArrowDirection = System.Windows.Forms.ArrowDirection.Right;
+            this.Disk_More_Info.ArrowHoverColor = System.Drawing.Color.Green;
+            this.Disk_More_Info.ArrowPressedColor = System.Drawing.Color.Green;
+            this.Disk_More_Info.BackColor = System.Drawing.Color.White;
+            this.Disk_More_Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Disk_More_Info.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.Disk_More_Info.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
+            this.Disk_More_Info.BorderPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(172)))), ((int)(((byte)(26)))));
+            this.Disk_More_Info.DefaultColor = System.Drawing.Color.White;
+            this.Disk_More_Info.DisabledArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.Disk_More_Info.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.Disk_More_Info.Enabled = false;
+            this.Disk_More_Info.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Disk_More_Info.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.Disk_More_Info.Location = new System.Drawing.Point(864, 21);
+            this.Disk_More_Info.Name = "Disk_More_Info";
+            this.Disk_More_Info.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(138)))), ((int)(((byte)(222)))), ((int)(((byte)(76)))));
+            this.Disk_More_Info.Size = new System.Drawing.Size(37, 40);
+            this.Disk_More_Info.TabIndex = 32;
+            this.Disk_More_Info.Click += new System.EventHandler(this.Disk_More_Info_Click);
             // 
             // groupBox11
             // 
@@ -2588,7 +2602,6 @@
         private MetroSuite.MetroLabel OS_SerialNumber;
         private MetroSuite.MetroLabel OS_Version;
         private MetroSuite.MetroLabel OS_BuildNumber;
-        private MetroSuite.MetroLabel OS_ProductKey;
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroSuite.MetroLabel OS_Language;
         private MetroSuite.MetroLabel OS_MUILanguages;
@@ -2635,7 +2648,6 @@
         private MetroSuite.MetroLabel metroLabel42;
         private MetroSuite.MetroLabel metroLabel41;
         private MetroSuite.MetroLabel metroLabel40;
-        private MetroSuite.MetroLabel metroLabel12;
         private MetroSuite.MetroLabel metroLabel16;
         private MetroSuite.MetroLabel metroLabel20;
         private MetroSuite.MetroLabel metroLabel58;
@@ -2693,6 +2705,8 @@
         private MetroSuite.MetroLabel metroLabel28;
         private MetroSuite.MetroLabel metroLabel29;
         private MetroSuite.MetroLabel metroLabel30;
+        private MetroSuite.MetroNavigationButton Disk_More_Info;
+        private MetroSuite.MetroLabel metroLabel51;
     }
 }
 

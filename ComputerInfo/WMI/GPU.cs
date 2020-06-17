@@ -8,51 +8,48 @@ namespace ComputerInfo.WMI
     {
         public GPU()
         {
-            foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.WMI_GPU).Get())
+            foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.GPU.Query).Get())
             {
                 try
                 {
-                    GPU_Adapter_Compatiability = wmi[WMIQuery.WMI_GPU_ADAPTER_COMPATIABILITY].ToString();
-                    GPU_Adapter_RAM = wmi[WMIQuery.WMI_GPU_ADAPTER_RAM].ToString();
-                    GPU_Caption = wmi[WMIQuery.WMI_GPU_CAPTION].ToString();
-                    GPU_Current_Refresh_Rate = wmi[WMIQuery.WMI_GPU_CURRENT_REFRESH_RATE].ToString();
-                    GPU_Driver_Date = wmi[WMIQuery.WMI_GPU_DRIVER_DATE].ToString();
-                    GPU_Driver_Version = wmi[WMIQuery.WMI_GPU_DRIVER_VERSION].ToString();
-                    GPU_Max_Refresh_Rate = wmi[WMIQuery.WMI_GPU_MAX_REFRESH_RATE].ToString();
-                    GPU_Min_Refresh_Rate = wmi[WMIQuery.WMI_GPU_MIN_REFRESH_RATE].ToString();
-                    GPU_Video_Mode_Description = wmi[WMIQuery.WMI_GPU_VIDEO_MODE_DESCRIPTION].ToString();
-                    GPU_Video_Processor = wmi[WMIQuery.WMI_GPU_VIDEO_PROCESSOR].ToString();
+                    AdapterCompatiability = wmi[WMIQuery.GPU.AdapterCompatibility].ToString();
+                    AdapterRAM = wmi[WMIQuery.GPU.AdapterRAM].ToString();
+                    Caption = wmi[WMIQuery.GPU.Caption].ToString();
+                    CurrentRefreshRate = wmi[WMIQuery.GPU.CurrentRefreshRate].ToString();
+                    DriverDate = wmi[WMIQuery.GPU.DriverDate].ToString();
+                    DriverVersion = wmi[WMIQuery.GPU.DriverVersion].ToString();
+                    MaxRefreshRate = wmi[WMIQuery.GPU.MaxRefreshRate].ToString();
+                    MinRefreshRate = wmi[WMIQuery.GPU.MinRefreshRate].ToString();
+                    VideoModeDescription = wmi[WMIQuery.GPU.VideoModeDescription].ToString();
+                    VideoProcessor = wmi[WMIQuery.GPU.VideoProcessor].ToString();
                 }
                 catch
                 {
                     continue;
                 }
             }
-            GPU_Driver_Date = GPU_Driver_Date.Split('.')[0];
+            DriverDate = DriverDate.Split('.')[0];
         }
 
-        //Company name
-        public String GPU_Adapter_Compatiability { get; private set; }
+        public String AdapterCompatiability { get; private set; }
 
-        public String GPU_Adapter_RAM { get; private set; }
+        public String AdapterRAM { get; private set; }
 
-        //Full name with company name
-        public String GPU_Caption { get; private set; }
+        public String Caption { get; private set; }
 
-        public String GPU_Current_Refresh_Rate { get; private set; }
+        public String CurrentRefreshRate { get; private set; }
 
-        public String GPU_Driver_Date { get; private set; }
+        public String DriverDate { get; private set; }
 
-        public String GPU_Driver_Version { get; private set; }
+        public String DriverVersion { get; private set; }
 
-        public String GPU_Max_Refresh_Rate { get; private set; }
+        public String MaxRefreshRate { get; private set; }
 
-        public String GPU_Min_Refresh_Rate { get; private set; }
+        public String MinRefreshRate { get; private set; }
 
-        public String GPU_Video_Mode_Description { get; private set; }
+        public String VideoModeDescription { get; private set; }
 
-        //Get graphic card name that except company name
-        public String GPU_Video_Processor { get; private set; }
+        public String VideoProcessor { get; private set; }
 
     }
 }

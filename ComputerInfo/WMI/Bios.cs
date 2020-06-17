@@ -8,33 +8,33 @@ namespace ComputerInfo.WMI
     {
         public Bios()
         {
-            BIOS_Base_Manufacturer = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_BASE_MANUFACTURER);
-            BIOS_Base_Product = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_BASE_PRODUCT);
-            BIOS_Base_Version = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_BASE_VERSION);
-            BIOS_Release_Date = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_RELEASE_DATE);
-            BIOS_Version = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_VERSION);
-            BIOS_Vendor = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_VENDOR);
-            BIOS_System_Product_Name = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_SYSTEM_PRODUCTNAME);
-            BIOS_System_Manufacturer = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_SYSTEM_MANUFACTURER);
-            BIOS_System_Version = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.REG_BIOS, WMIQuery.REG_BIOS_SYSTEM_VERSION);
+            BaseManufacturer = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.Bios.Query, WMIQuery.Bios.BaseBoardManufacturer);
+            BaseProduct = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.Bios.Query, WMIQuery.Bios.BaseBoardProduct);
+            BaseVersion = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.Bios.Query, WMIQuery.Bios.BaseBoardVersion);
+            ReleaseDate = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.Bios.Query, WMIQuery.Bios.BiosReleaseDate);
+            BiosVersion = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.Bios.Query, WMIQuery.Bios.BiosVersion);
+            BiosVendor = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.Bios.Query, WMIQuery.Bios.BiosVendor);
+            SystemProductName = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.Bios.Query, WMIQuery.Bios.SystemProductName);
+            SystemManufacturer = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.Bios.Query, WMIQuery.Bios.SystemManufacturer);
+            SystemVersion = Untill.ReadRegistry(Registry.LocalMachine, WMIQuery.Bios.Query, WMIQuery.Bios.SystemVersion);
         }
 
-        public String BIOS_Base_Manufacturer { get; private set; }
+        public String BaseManufacturer { get; private set; }
 
-        public String BIOS_Base_Product { get; private set; }
+        public String BaseProduct { get; private set; }
 
-        public String BIOS_Base_Version { get; private set; }
+        public String BaseVersion { get; private set; }
 
-        public String BIOS_Release_Date { get; private set; }
+        public String ReleaseDate { get; private set; }
 
-        public String BIOS_Version { get; private set; }
+        public String BiosVersion { get; private set; }
 
-        public String BIOS_Vendor { get; private set; }
+        public String BiosVendor { get; private set; }
 
-        public String BIOS_System_Product_Name { get; private set; }
+        public String SystemProductName { get; private set; }
 
-        public String BIOS_System_Manufacturer { get; private set; }
+        public String SystemManufacturer { get; private set; }
 
-        public String BIOS_System_Version { get; private set; }
+        public String SystemVersion { get; private set; }
     }
 }

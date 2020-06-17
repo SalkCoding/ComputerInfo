@@ -1,79 +1,111 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Management;
 
 namespace ComputerInfo.Define
 {
-    public class WMIQuery
+    public static class WMIQuery
     {
-        //CPU WMI
-        public static String WMI_CPU = "select * from  Win32_Processor";
-        public static String WMI_CPU_NAME = "Name";
-        public static String WMI_CPU_MAX_CLOCK = "MaxClockSpeed";
-        public static String WMI_CPU_VOLTAGE = "CurrentVoltage";
-        public static String WMI_CPU_L2CACHE_SIZE = "L2CacheSize";
-        public static String WMI_CPU_L3CACHE_SIZE = "L3CacheSize";
-        public static String WMI_CPU_CORE_COUNT = "NumberOfCores";
-        public static String WMI_CPU_THREAD_COUNT = "ThreadCount";
-        //BIOS WMI
-        public static String REG_BIOS = @"HARDWARE\DESCRIPTION\System\BIOS";
-        public static String REG_BIOS_BASE_MANUFACTURER = "BaseBoardManufacturer";
-        public static String REG_BIOS_BASE_PRODUCT = "BaseBoardProduct";
-        public static String REG_BIOS_BASE_VERSION = "BaseBoardVersion";
-        public static String REG_BIOS_RELEASE_DATE = "BIOSReleaseDate";
-        public static String REG_BIOS_VERSION = "BIOSVersion";
-        public static String REG_BIOS_VENDOR = "BIOSVendor";
-        public static String REG_BIOS_SYSTEM_PRODUCTNAME = "SystemProductName";
-        public static String REG_BIOS_SYSTEM_MANUFACTURER = "SystemManufacturer";
-        public static String REG_BIOS_SYSTEM_VERSION = "SystemVersion";
-        //MEMORY WMI
-        public static String WMI_RAM = "select * from  Win32_PhysicalMemory";
-        public static String WMI_RAM_SPEED = "Speed";
-        public static String WMI_RAM_VOLTAGE = "ConfiguredVoltage";
-        public static String WMI_RAM_MANUFACTURER = "Manufacturer";
-        //DISK WMI
-        public static String WMI_DISK = "select * from  Win32_DiskDrive";
-        public static String WMI_DISK_LOGICAL = "select * from  Win32_LogicalDisk";
-        /*//DISK'S MORE INFO WMI
-        public static String WMI_DISK_MORE_INFO_DISK = "select * from  Win32_DiskDrive";
-        public static String WMI_DISK_MORE_INFO_LOGICAL_DISK = "select * from  Win32_LogicalDisk";
-        public static String WMI_DISK_MORE_INFO_PARTIITION = "select * from  Win32_LogicalDiskToPartition";
-        public static String WMI_DISK_MORE_INFO_CAPTION = "Caption";
-        public static String WMI_DISK_MORE_INFO_DEVICEID = "DeviceID";
-        public static String WMI_DISK_MORE_INFO_MODEL = "Model";
-        public static String WMI_DISK_MORE_INFO_FILESYSTEM = "FileSystem";
-        public static String WMI_DISK_MORE_INFO_VOLUMENAME = "VolumeName";
-        public static String WMI_DISK_MORE_INFO_SIZE = "Size";
-        public static String WMI_DISK_MORE_INFO_FREESPACE = "FreeSpace";
-        public static String WMI_DISK_MORE_INFO_STATUS = "Status";
-        public static String WMI_DISK_MORE_INFO_SYSTEMNAME = "SystemName";
-        public static String WMI_DISK_MORE_INFO_NAME = "Name";
-        public static String WMI_DISK_MORE_INFO_SERIALNUMBER = "SerialNumber";
-        public static String WMI_DISK_MORE_INFO_VOLUMESERIALNUMBER = "VolumeSerialNumber";
-        public static String WMI_DISK_MORE_INFO_SIGNATURE = "Signature";*/
-        //GPU WMI
-        public static String WMI_GPU = "select * from  Win32_VideoController";
-        public static String WMI_GPU_ADAPTER_COMPATIABILITY = "AdapterCompatibility";//Company name
-        public static String WMI_GPU_ADAPTER_RAM = "AdapterRAM";
-        public static String WMI_GPU_CAPTION = "Caption";//Full name
-        public static String WMI_GPU_CURRENT_REFRESH_RATE = "CurrentRefreshRate";
-        public static String WMI_GPU_DRIVER_DATE = "DriverDate";
-        public static String WMI_GPU_DRIVER_VERSION = "DriverVersion";
-        public static String WMI_GPU_MAX_REFRESH_RATE = "MaxRefreshRate";
-        public static String WMI_GPU_MIN_REFRESH_RATE = "MinRefreshRate";
-        public static String WMI_GPU_VIDEO_PROCESSOR = "VideoProcessor";//Get graphic card name that except company name
-        public static String WMI_GPU_VIDEO_MODE_DESCRIPTION = "VideoModeDescription";
-        //OS WMI
-        public static String WMI_OS = "select * from  Win32_OperatingSystem";
-        public static String WMI_OS_NAME = "Caption";
-        public static String WMI_OS_ARCHITECTURE = "OSArchitecture";
-        public static String WMI_OS_BUILD_NUMBER = "BuildNumber";
-        public static String WMI_OS_VERSION = "Version";
-        public static String WMI_OS_SERIALNUMBER = "SerialNumber";
-        public static String WMI_OS_LASTBOOTUPTIME = "LastBootUpTime";
-        public static String WMI_OS_CONTRY_CODE = "CountryCode";
-        public static String WMI_OS_CURRENT_TIME_ZONE = "CurrentTimeZone";
-        public static String WMI_OS_MUI_LANGUAGES = "MUILanguages";
-        public static String WMI_OS_LANGUAGE = "OSLanguage";
-        public static String WMI_OS_INSTALL_DATE = "InstallDate";
-       
+        public static IEnumerable<ManagementBaseObject> WMIExecQuery(string query)
+        {
+            using (var searcher = new ManagementObjectSearcher(query))
+            {
+                using (var collection = searcher.Get())
+                {
+                    foreach (ManagementBaseObject item in collection)
+                    {
+                        yield return item;
+                    }
+                }
+            }
+        }
+
+        public static class CPU
+        {
+            public static readonly String Query = "select * from  Win32_Processor";
+            public static readonly String Name = "Name";
+            public static readonly String MaxClock = "MaxClockSpeed";
+            public static readonly String Voltage = "CurrentVoltage";
+            public static readonly String L2CacheSize = "L2CacheSize";
+            public static readonly String L3CacheSize = "L3CacheSize";
+            public static readonly String NumberOfCores = "NumberOfCores";
+            public static readonly String ThreadCount = "ThreadCount";
+        }
+
+        public static class Bios
+        {
+            public static readonly String Query = @"HARDWARE\DESCRIPTION\System\BIOS";
+            public static readonly String BaseBoardManufacturer = "BaseBoardManufacturer";
+            public static readonly String BaseBoardProduct = "BaseBoardProduct";
+            public static readonly String BaseBoardVersion = "BaseBoardVersion";
+            public static readonly String BiosReleaseDate = "BIOSReleaseDate";
+            public static readonly String BiosVersion = "BIOSVersion";
+            public static readonly String BiosVendor = "BIOSVendor";
+            public static readonly String SystemProductName = "SystemProductName";
+            public static readonly String SystemManufacturer = "SystemManufacturer";
+            public static readonly String SystemVersion = "SystemVersion";
+        }
+
+        public static class RAM
+        {
+            public static readonly String Query = "select * from  Win32_PhysicalMemory";
+            public static readonly String Speed = "Speed";
+            public static readonly String ConfiguredVoltage = "ConfiguredVoltage";
+            public static readonly String Manufacturer = "Manufacturer";
+        }
+
+        public static class Disk
+        {
+            public static readonly String Query = "select * from  Win32_DiskDrive";
+            public static readonly String d = "select * from  Win32_LogicalDisk";
+
+            public static readonly String WMI_DISK_MORE_INFO_DISK = "select * from  Win32_DiskDrive";
+            public static readonly String WMI_DISK_MORE_INFO_LOGICAL_DISK = "select * from  Win32_LogicalDisk";
+            public static readonly String WMI_DISK_MORE_INFO_PARTIITION = "select * from  Win32_LogicalDiskToPartition";
+            public static readonly String WMI_DISK_MORE_INFO_CAPTION = "Caption";
+            public static readonly String WMI_DISK_MORE_INFO_DEVICEID = "DeviceID";
+            public static readonly String WMI_DISK_MORE_INFO_MODEL = "Model";
+            public static readonly String WMI_DISK_MORE_INFO_FILESYSTEM = "FileSystem";
+            public static readonly String WMI_DISK_MORE_INFO_VOLUMENAME = "VolumeName";
+            public static readonly String WMI_DISK_MORE_INFO_SIZE = "Size";
+            public static readonly String WMI_DISK_MORE_INFO_FREESPACE = "FreeSpace";
+            public static readonly String WMI_DISK_MORE_INFO_STATUS = "Status";
+            public static readonly String WMI_DISK_MORE_INFO_SYSTEMNAME = "SystemName";
+            public static readonly String WMI_DISK_MORE_INFO_NAME = "Name";
+            public static readonly String WMI_DISK_MORE_INFO_SERIALNUMBER = "SerialNumber";
+            public static readonly String WMI_DISK_MORE_INFO_VOLUMESERIALNUMBER = "VolumeSerialNumber";
+            public static readonly String WMI_DISK_MORE_INFO_SIGNATURE = "Signature";
+        }
+
+        public static class GPU
+        {
+            public static String Query = "select * from  Win32_VideoController";
+            public static String AdapterCompatibility = "AdapterCompatibility";
+            public static String AdapterRAM = "AdapterRAM";
+            public static String Caption = "Caption";
+            public static String CurrentRefreshRate = "CurrentRefreshRate";
+            public static String DriverDate = "DriverDate";
+            public static String DriverVersion = "DriverVersion";
+            public static String MaxRefreshRate = "MaxRefreshRate";
+            public static String MinRefreshRate = "MinRefreshRate";
+            public static String VideoProcessor = "VideoProcessor";
+            public static String VideoModeDescription = "VideoModeDescription";
+        }
+
+        public static class OS
+        {
+            public static String Query = "select * from  Win32_OperatingSystem";
+            public static String Caption = "Caption";
+            public static String Architecture = "OSArchitecture";
+            public static String BuildNumber = "BuildNumber";
+            public static String Version = "Version";
+            public static String SerialNumber = "SerialNumber";
+            public static String LastBootUpTime = "LastBootUpTime";
+            public static String CountryCode = "CountryCode";
+            public static String CurrentTimeZone = "CurrentTimeZone";
+            public static String MUILanguages = "MUILanguages";
+            public static String Language = "OSLanguage";
+            public static String InstallDate = "InstallDate";
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace ComputerInfo.Graph
     class CPUGraph
     {
        
-        private PerformanceCounter cpuCounter;
+        private readonly PerformanceCounter cpuCounter;
 
         public MetroTrackerPath GraphPath { get; } = new MetroTrackerPath();
 
@@ -25,7 +25,7 @@ namespace ComputerInfo.Graph
             };
         }
 
-        public void RefreshGraph(MetroTracker trackbar, GCircularProgress CPU_Usage)
+        public void RefreshGraph(GCircularProgress CPU_Usage)
         {
             Double percent = cpuCounter.NextValue();
             Int32 usage = Convert.ToInt32(percent);

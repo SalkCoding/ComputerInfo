@@ -1,27 +1,24 @@
 ﻿using System;
 using System.Management;
 using ComputerInfo.Define;
-using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 namespace ComputerInfo.WMI
 {
     public class CPU
     {
         public CPU()
         {
-            foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.WMI_CPU).Get())
+            foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.CPU.Query).Get())
             {
                 try
                 {
-                    CPU_Name = wmi[WMIQuery.WMI_CPU_NAME].ToString();
-                    CPU_Current_Clock = Convert.ToInt32(wmi[WMIQuery.WMI_CPU_MAX_CLOCK]);
-                    CPU_Voltage = Convert.ToDouble(wmi[WMIQuery.WMI_CPU_VOLTAGE]) / 10;
-                    CPU_L2Cache_Size = Convert.ToInt32(wmi[WMIQuery.WMI_CPU_L2CACHE_SIZE]);
-                    CPU_L3Cache_Size = Convert.ToInt32(wmi[WMIQuery.WMI_CPU_L3CACHE_SIZE]);
-                    CPU_Core_Count = Convert.ToInt32(wmi[WMIQuery.WMI_CPU_CORE_COUNT]);
-                    CPU_Thread_Count = Convert.ToInt32(wmi[WMIQuery.WMI_CPU_THREAD_COUNT]);
+                    Name = wmi[WMIQuery.CPU.Name].ToString().Trim();
+                    CurrentClock = Convert.ToInt32(wmi[WMIQuery.CPU.MaxClock]);
+                    Voltage = Convert.ToDouble(wmi[WMIQuery.CPU.Voltage]) / 10;
+                    L2CacheSize = Convert.ToInt32(wmi[WMIQuery.CPU.L2CacheSize]);
+                    L3CacheSize = Convert.ToInt32(wmi[WMIQuery.CPU.L3CacheSize]);
+                    CoreCount = Convert.ToInt32(wmi[WMIQuery.CPU.NumberOfCores]);
+                    ThreadCount = Convert.ToInt32(wmi[WMIQuery.CPU.ThreadCount]);
                 }
                 catch
                 {
@@ -30,18 +27,18 @@ namespace ComputerInfo.WMI
             }
         }
 
-        public static String CPU_Name { get; private set; }
+        public String Name { get; private set; }
 
-        public static Int32 CPU_Current_Clock { get; private set; }
+        public Int32 CurrentClock { get; private set; }
 
-        public static Double CPU_Voltage { get; private set; }
+        public Double Voltage { get; private set; }
 
-        public static Int32 CPU_L2Cache_Size { get; private set; }
+        public Int32 L2CacheSize { get; private set; }
 
-        public static Int32 CPU_L3Cache_Size { get; private set; }
+        public Int32 L3CacheSize { get; private set; }
 
-        public static Int32 CPU_Core_Count { get; private set; }
+        public Int32 CoreCount { get; private set; }
 
-        public static Int32 CPU_Thread_Count { get; private set; }
+        public Int32 ThreadCount { get; private set; }
     }
 }
