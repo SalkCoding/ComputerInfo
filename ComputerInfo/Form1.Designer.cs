@@ -1821,9 +1821,9 @@
             this.RAM_Refresh_Speed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RAM_Refresh_Speed.FormattingEnabled = true;
             this.RAM_Refresh_Speed.Items.AddRange(new object[] {
-            "빠름 (0.4초)",
-            "보통 (1.0초)",
-            "느림 (4.0초)"});
+            "Fast \t(0.4s)",
+            "Normal \t(1.0s)",
+            "Slow\t(4.0s)"});
             this.RAM_Refresh_Speed.Location = new System.Drawing.Point(6, 20);
             this.RAM_Refresh_Speed.Name = "RAM_Refresh_Speed";
             this.RAM_Refresh_Speed.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -2343,9 +2343,9 @@
             this.Refresh_Speed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Refresh_Speed.FormattingEnabled = true;
             this.Refresh_Speed.Items.AddRange(new object[] {
-            "빠름 (0.4초)",
-            "보통 (1.0초)",
-            "느림 (4.0초)"});
+            "Fast \t(0.4s)",
+            "Normal \t(1.0s)",
+            "Slow\t(4.0s)"});
             this.Refresh_Speed.Location = new System.Drawing.Point(6, 26);
             this.Refresh_Speed.Name = "Refresh_Speed";
             this.Refresh_Speed.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));

@@ -105,10 +105,11 @@ namespace ComputerInfo
 
             timer1.Enabled = true;
             Text = "Loading completed!";
+            Invalidate();
 
             BackgroundWorker textRefresher = new BackgroundWorker();
-            textRefresher.DoWork += delegate { Thread.Sleep(5000); };
-            textRefresher.RunWorkerCompleted += delegate { Text = "Computer information"; };
+            textRefresher.DoWork += delegate { Thread.Sleep(3000); };
+            textRefresher.RunWorkerCompleted += delegate { Text = "Computer information"; Invalidate(); };
             textRefresher.RunWorkerAsync();
         }
 
@@ -198,7 +199,7 @@ namespace ComputerInfo
                 diskDialog.FormClosed += delegate { diskDialog = null; };
                 diskDialog.Show();
             }
-            
+
         }
 
         #endregion
