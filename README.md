@@ -11,11 +11,11 @@ Control skins
   
   GChartLib 
   http://www.vb-paradise.de/index.php/Thread/118123-GChartLib-Pr%C3%A4sentiert-Daten-auf-eine-neue-moderne-Art/#59da2a65195c6_1
-![cpu](./screenshot/cpu.PNG)
-![motherboard](./screenshot/motherboard.PNG)
-![ram](./screenshot/ram.PNG)
-![storage](./screenshot/storage.PNG)
-![detailstorage](./screenshot/detailstorage.PNG)
-![gpu](./screenshot/gpu.PNG)
-![os](./screenshot/os.PNG)
-![summary](./screenshot/summary.PNG)
+![cpu](./screenshot/cpu.png)
+![motherboard](./screenshot/motherboard.png)
+![ram](./screenshot/ram.png)
+![storage](./screenshot/storage.png)
+![detailstorage](./screenshot/detailstorage.png)
+![gpu](./screenshot/gpu.png)
+![os](./screenshot/os.png)
+![summary](./screenshot/summary.png)
