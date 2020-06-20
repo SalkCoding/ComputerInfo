@@ -8,22 +8,17 @@ namespace ComputerInfo.WMI
     {
         public CPU()
         {
-            foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.CPU.Query).Get())
+            var iter = WMIQuery.WMIExecQuery(WMIQuery.CPU.Query).GetEnumerator();
+            while (iter.MoveNext())
             {
-                try
-                {
-                    Name = wmi[WMIQuery.CPU.Name].ToString().Trim();
-                    CurrentClock = Convert.ToInt32(wmi[WMIQuery.CPU.MaxClock]);
-                    Voltage = Convert.ToDouble(wmi[WMIQuery.CPU.Voltage]) / 10;
-                    L2CacheSize = Convert.ToInt32(wmi[WMIQuery.CPU.L2CacheSize]);
-                    L3CacheSize = Convert.ToInt32(wmi[WMIQuery.CPU.L3CacheSize]);
-                    CoreCount = Convert.ToInt32(wmi[WMIQuery.CPU.NumberOfCores]);
-                    ThreadCount = Convert.ToInt32(wmi[WMIQuery.CPU.ThreadCount]);
-                }
-                catch
-                {
-                    continue;
-                }
+                var wmi = iter.Current;
+                Name = wmi[WMIQuery.CPU.Name].ToString().Trim();
+                CurrentClock = Convert.ToInt32(wmi[WMIQuery.CPU.MaxClock]);
+                Voltage = Convert.ToDouble(wmi[WMIQuery.CPU.Voltage]) / 10;
+                L2CacheSize = Convert.ToInt32(wmi[WMIQuery.CPU.L2CacheSize]);
+                L3CacheSize = Convert.ToInt32(wmi[WMIQuery.CPU.L3CacheSize]);
+                CoreCount = Convert.ToInt32(wmi[WMIQuery.CPU.NumberOfCores]);
+                ThreadCount = Convert.ToInt32(wmi[WMIQuery.CPU.ThreadCount]);
             }
         }
 

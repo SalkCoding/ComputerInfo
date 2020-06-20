@@ -9,7 +9,6 @@ using ComputerInfo.WMI;
 using System.Management;
 using System.Windows.Forms;
 using System.IO;
-using System.Diagnostics;
 
 namespace ComputerInfo
 {
@@ -36,7 +35,7 @@ namespace ComputerInfo
         //Dialog
         private DetailDiskInfo diskDialog;
 
-        private bool DEBUG = false;
+        private readonly bool DEBUG = false;
 
         public Form1()
         {

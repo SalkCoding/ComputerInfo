@@ -1300,7 +1300,6 @@
             // metroLabel51
             // 
             this.metroLabel51.AutoSize = true;
-            this.metroLabel51.Enabled = false;
             this.metroLabel51.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.metroLabel51.Location = new System.Drawing.Point(864, 3);
             this.metroLabel51.Name = "metroLabel51";
@@ -1323,7 +1322,6 @@
             this.Disk_More_Info.DefaultColor = System.Drawing.Color.White;
             this.Disk_More_Info.DisabledArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.Disk_More_Info.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.Disk_More_Info.Enabled = false;
             this.Disk_More_Info.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Disk_More_Info.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.Disk_More_Info.Location = new System.Drawing.Point(864, 21);

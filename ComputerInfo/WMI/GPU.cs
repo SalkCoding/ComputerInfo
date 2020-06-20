@@ -8,25 +8,20 @@ namespace ComputerInfo.WMI
     {
         public GPU()
         {
-            foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.GPU.Query).Get())
+            var iter = WMIQuery.WMIExecQuery(WMIQuery.GPU.Query).GetEnumerator();
+            while (iter.MoveNext())
             {
-                try
-                {
-                    AdapterCompatiability = wmi[WMIQuery.GPU.AdapterCompatibility].ToString();
-                    AdapterRAM = wmi[WMIQuery.GPU.AdapterRAM].ToString();
-                    Caption = wmi[WMIQuery.GPU.Caption].ToString();
-                    CurrentRefreshRate = wmi[WMIQuery.GPU.CurrentRefreshRate].ToString();
-                    DriverDate = wmi[WMIQuery.GPU.DriverDate].ToString();
-                    DriverVersion = wmi[WMIQuery.GPU.DriverVersion].ToString();
-                    MaxRefreshRate = wmi[WMIQuery.GPU.MaxRefreshRate].ToString();
-                    MinRefreshRate = wmi[WMIQuery.GPU.MinRefreshRate].ToString();
-                    VideoModeDescription = wmi[WMIQuery.GPU.VideoModeDescription].ToString();
-                    VideoProcessor = wmi[WMIQuery.GPU.VideoProcessor].ToString();
-                }
-                catch
-                {
-                    continue;
-                }
+                var wmi = iter.Current;
+                AdapterCompatiability = wmi[WMIQuery.GPU.AdapterCompatibility].ToString();
+                AdapterRAM = wmi[WMIQuery.GPU.AdapterRAM].ToString();
+                Caption = wmi[WMIQuery.GPU.Caption].ToString();
+                CurrentRefreshRate = wmi[WMIQuery.GPU.CurrentRefreshRate].ToString();
+                DriverDate = wmi[WMIQuery.GPU.DriverDate].ToString();
+                DriverVersion = wmi[WMIQuery.GPU.DriverVersion].ToString();
+                MaxRefreshRate = wmi[WMIQuery.GPU.MaxRefreshRate].ToString();
+                MinRefreshRate = wmi[WMIQuery.GPU.MinRefreshRate].ToString();
+                VideoModeDescription = wmi[WMIQuery.GPU.VideoModeDescription].ToString();
+                VideoProcessor = wmi[WMIQuery.GPU.VideoProcessor].ToString();
             }
             DriverDate = DriverDate.Split('.')[0];
         }

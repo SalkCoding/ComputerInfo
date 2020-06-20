@@ -9,28 +9,23 @@ namespace ComputerInfo.WMI
     {
         public OS()
         {
-            foreach (ManagementBaseObject wmi in new ManagementObjectSearcher(WMIQuery.OS.Query).Get())
+            String[] MUI;
+            var iter = WMIQuery.WMIExecQuery(WMIQuery.OS.Query).GetEnumerator();
+            while (iter.MoveNext())
             {
-                String[] MUI;
-                try
-                {
-                    Caption = wmi[WMIQuery.OS.Caption].ToString();
-                    Architecture = wmi[WMIQuery.OS.Architecture].ToString();
-                    BuildNumber = wmi[WMIQuery.OS.BuildNumber].ToString();
-                    Version = wmi[WMIQuery.OS.Version].ToString();
-                    SerialNumber = wmi[WMIQuery.OS.SerialNumber].ToString();
-                    LastBootUpTime = wmi[WMIQuery.OS.LastBootUpTime].ToString();
-                    ContryCode = wmi[WMIQuery.OS.CountryCode].ToString();
-                    CurrentTimeZone = wmi[WMIQuery.OS.CurrentTimeZone].ToString();
-                    MUI = (String[])wmi[WMIQuery.OS.MUILanguages];
-                    Language = wmi[WMIQuery.OS.Language].ToString();
-                    InstallTime = ManagementDateTimeConverter.ToDateTime(wmi[WMIQuery.OS.InstallDate].ToString());
-                }
-                catch
-                {
-                    continue;
-                }
-                MUILanguages = String.Join(", ",MUI);
+                var wmi = iter.Current;
+                Caption = wmi[WMIQuery.OS.Caption].ToString();
+                Architecture = wmi[WMIQuery.OS.Architecture].ToString();
+                BuildNumber = wmi[WMIQuery.OS.BuildNumber].ToString();
+                Version = wmi[WMIQuery.OS.Version].ToString();
+                SerialNumber = wmi[WMIQuery.OS.SerialNumber].ToString();
+                LastBootUpTime = wmi[WMIQuery.OS.LastBootUpTime].ToString();
+                ContryCode = wmi[WMIQuery.OS.CountryCode].ToString();
+                CurrentTimeZone = wmi[WMIQuery.OS.CurrentTimeZone].ToString();
+                MUI = (String[])wmi[WMIQuery.OS.MUILanguages];
+                Language = wmi[WMIQuery.OS.Language].ToString();
+                InstallTime = ManagementDateTimeConverter.ToDateTime(wmi[WMIQuery.OS.InstallDate].ToString());
+                MUILanguages = String.Join(", ", MUI);
             }
         }
 

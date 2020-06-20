@@ -10,18 +10,13 @@ namespace ComputerInfo.WMI
 
         public RAM()
         {
-            foreach (ManagementObject wmi in new ManagementObjectSearcher(WMIQuery.RAM.Query).Get())
+            var iter = WMIQuery.WMIExecQuery(WMIQuery.RAM.Query).GetEnumerator();
+            while (iter.MoveNext())
             {
-                try
-                {
-                    Speed = wmi[WMIQuery.RAM.Speed].ToString();
-                    Voltage = wmi[WMIQuery.RAM.ConfiguredVoltage].ToString().Insert(1, ".");
-                    Manufacturer = wmi[WMIQuery.RAM.Manufacturer].ToString();
-                }
-                catch
-                {
-                    continue;
-                }
+                var wmi = iter.Current;
+                Speed = wmi[WMIQuery.RAM.Speed].ToString();
+                Voltage = wmi[WMIQuery.RAM.ConfiguredVoltage].ToString().Insert(1, ".");
+                Manufacturer = wmi[WMIQuery.RAM.Manufacturer].ToString();
             }
             PysicalSize = info.TotalPhysicalMemory;
             VirtualSize = info.TotalVirtualMemory;
