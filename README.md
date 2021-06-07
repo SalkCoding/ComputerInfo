@@ -15,7 +15,7 @@ Control skins
 ![motherboard](./screenshot/motherboard.png)
 ![ram](./screenshot/ram.png)
 ![storage](./screenshot/storage.png)
-![detailstorage](./screenshot/detailstorage.png)
+![detailstoarge](./screenshot/detailstoarge.png)
 ![gpu](./screenshot/gpu.png)
 ![os](./screenshot/os.png)
 ![summary](./screenshot/summary.png)
