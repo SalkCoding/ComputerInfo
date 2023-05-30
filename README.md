@@ -1,7 +1,7 @@
 # ComputerInfo
-Get your computer's hardware informations with C#
+Get your computer's hardware information with C#
 
-feature : this program get CPU and RAM frequently,voltage,usage and mother board info,etc...
+This program will get various HW data from your PC and show it.
 
 Main form skin : MetroFrameWork
 
@@ -11,11 +11,12 @@ Control skins
   
   GChartLib 
   http://www.vb-paradise.de/index.php/Thread/118123-GChartLib-Pr%C3%A4sentiert-Daten-auf-eine-neue-moderne-Art/#59da2a65195c6_1
+  
 ![cpu](./screenshot/cpu.png)
 ![motherboard](./screenshot/motherboard.png)
 ![ram](./screenshot/ram.png)
 ![storage](./screenshot/storage.png)
-![detailstoarge](./screenshot/detailstoarge.png)
+![detailstorage](./screenshot/detailstorage.png)
 ![gpu](./screenshot/gpu.png)
 ![os](./screenshot/os.png)
 ![summary](./screenshot/summary.png)

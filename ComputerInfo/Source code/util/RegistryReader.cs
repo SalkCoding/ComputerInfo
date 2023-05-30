@@ -3,20 +3,15 @@ using System;
 
 namespace ComputerInfo.Define
 {
-    public class Untill
+    public class RegistryReader
     {
-        public static string ReadRegistry(RegistryKey key, String root, String subkey)
+        public static string ReadRegistry(RegistryKey key, string root, string subkey)
         {
-
             key = key.OpenSubKey(root, false);
-
             if (key == null) return "null";
 
             var value = key.GetValue(subkey);
-            if (value != null)
-                return Convert.ToString(value);
-            else
-                return "null";
+            return value != null ? value.ToString() : "null";
         }
     }
 }

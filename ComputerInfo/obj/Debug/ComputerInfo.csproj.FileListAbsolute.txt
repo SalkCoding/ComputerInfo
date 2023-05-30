@@ -66,3 +66,22 @@ C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerIn
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.pdb
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CoreCompileInputs.cache
 C:\Users\Josangbeom\Desktop\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.DetailDiskInfo.resources
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.AssemblyReference.cache
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.SuggestedBindingRedirects.cache
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.DetailDiskInfo.resources
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Form1.resources
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.Properties.Resources.resources
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.GenerateResource.cache
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CoreCompileInputs.cache
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.exe
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.pdb
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.exe.config
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.exe
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\ComputerInfo.pdb
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\GChartLib.dll
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MaterialSkin.dll
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.Design.dll
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.dll
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroFramework.Fonts.dll
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\bin\Debug\MetroSuite 2.0.dll
+E:\Programming\Visual Studio\C#\ComputerInfo\ComputerInfo\obj\Debug\ComputerInfo.csproj.CopyComplete
