@@ -14,6 +14,7 @@ namespace ComputerInfo.TabPage
         private readonly MetroLabel lblMemoryVoltage;
         private readonly MetroLabel lblMemoryPhysicalSize;
         private readonly MetroLabel lblVirtualMemorySize;
+        private readonly MetroLabel lblMemorySummary;
 
         public MemoryTabPage(
             Memory memory,
@@ -21,7 +22,8 @@ namespace ComputerInfo.TabPage
             MetroLabel lblMemorySpeed,
             MetroLabel lblMemoryVoltage,
             MetroLabel lblMemoryPhysicalSize,
-            MetroLabel lblVirtualMemorySize
+            MetroLabel lblVirtualMemorySize,
+            MetroLabel lblMemorySummary
             )
         {
             this.memory = memory;
@@ -30,17 +32,20 @@ namespace ComputerInfo.TabPage
             this.lblMemoryVoltage = lblMemoryVoltage;
             this.lblMemoryPhysicalSize = lblMemoryPhysicalSize;
             this.lblVirtualMemorySize = lblVirtualMemorySize;
+            this.lblMemorySummary = lblMemorySummary;
         }
 
         public void update()
         {
-            double Pysical_Size = (memory.PysicalSize / Constants.GIGABYTE_DIVIDE_CONSTANTS);
-            double Virtual_Size = (memory.VirtualSize / Constants.GIGABYTE_DIVIDE_CONSTANTS);
-            lblMemoryManufacturer.Text = memory.Manufacturer;
-            lblMemorySpeed.Text = string.Format("{0} Mhz", memory.Speed);
-            lblMemoryVoltage.Text = string.Format("{0} V", memory.Voltage);
-            lblMemoryPhysicalSize.Text = string.Format("{0:F2} GB", Pysical_Size);
-            lblVirtualMemorySize.Text = string.Format("{0:F2} GB", Virtual_Size);
+            double physicalSize = (memory.PhysicalSize / Constants.GIGABYTE_DIVIDE_CONSTANTS);
+            double virtualSize = (memory.VirtualSize / Constants.GIGABYTE_DIVIDE_CONSTANTS);
+            //TODO add feature that show each memory information
+            lblMemoryManufacturer.Text = memory.Manufacturer[0];
+            lblMemorySpeed.Text = string.Format("{0} Mhz", memory.Speed[0]);
+            lblMemoryVoltage.Text = string.Format("{0}", memory.Voltage[0]);
+            lblMemoryPhysicalSize.Text = string.Format("{0:F2} GB", physicalSize);
+            lblVirtualMemorySize.Text = string.Format("{0:F2} GB", virtualSize);
+            lblMemorySummary.Text = string.Format("{0:S} {1:F2} GB", memory.MemoryType[0], physicalSize);
         }
     }
 }

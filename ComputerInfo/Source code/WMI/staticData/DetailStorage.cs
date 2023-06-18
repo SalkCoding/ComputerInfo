@@ -7,22 +7,22 @@ namespace ComputerInfo.WMI
 {
     class DetailStorage : WMIQuery
     {
-        private static class Query
+        public static class Query
         {
-            internal static readonly string DiskDriveWMI = @"select * from  Win32_DiskDrive";
-            internal static readonly string Caption = "Caption";
-            internal static readonly string DeviceID = "DeviceID";
-            internal static readonly string Model = "Model";
-            internal static readonly string FileSystem = "FileSystem";
-            internal static readonly string VolumeName = "VolumeName";
-            internal static readonly string Size = "Size";
-            internal static readonly string FreeSpace = "FreeSpace";
-            internal static readonly string Status = "Status";
-            internal static readonly string SystemName = "SystemName";
-            internal static readonly string Name = "Name";
-            internal static readonly string SerialNumber = "SerialNumber";
-            internal static readonly string VolumeSerialNumber = "VolumeSerialNumber";
-            internal static readonly string Signature = "Signature";
+            public static readonly string DiskDriveWMI = @"select * from  Win32_DiskDrive";
+            public static readonly string Caption = "Caption";
+            public static readonly string DeviceID = "DeviceID";
+            public static readonly string Model = "Model";
+            public static readonly string FileSystem = "FileSystem";
+            public static readonly string VolumeName = "VolumeName";
+            public static readonly string Size = "Size";
+            public static readonly string FreeSpace = "FreeSpace";
+            public static readonly string Status = "Status";
+            public static readonly string SystemName = "SystemName";
+            public static readonly string Name = "Name";
+            public static readonly string SerialNumber = "SerialNumber";
+            public static readonly string VolumeSerialNumber = "VolumeSerialNumber";
+            public static readonly string Signature = "Signature";
         }
 
         public DetailStorage()

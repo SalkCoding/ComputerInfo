@@ -1,5 +1,4 @@
 ﻿using MetroSuite;
-using GChartLib;
 using System;
 using System.Diagnostics;
 
@@ -10,13 +9,11 @@ namespace ComputerInfo.Graph
         private readonly PerformanceCounter cpuCounter;
 
         private readonly MetroTracker trkCpu;
-        private readonly GCircularProgress gcpCpuUsage;
         private readonly MetroTrackerPath trackPath;
 
-        public CPUGraph(MetroTracker trkCpu, GCircularProgress gcpCpuUsage)
+        public CPUGraph(MetroTracker trkCpu)
         {
             this.trkCpu = trkCpu;
-            this.gcpCpuUsage = gcpCpuUsage;
 
             cpuCounter = new PerformanceCounter
             {
@@ -27,8 +24,9 @@ namespace ComputerInfo.Graph
 
             trackPath = new MetroTrackerPath
             {
-                Name = "CPU",
-                Style = MetroTrackerPath.PathStyle.CPU
+                Name = "CPU Usage",
+                Style = MetroTrackerPath.PathStyle.CPU,
+                LineWidth = 2
             };
             trkCpu.Paths.Add(trackPath);
         }
@@ -38,7 +36,7 @@ namespace ComputerInfo.Graph
             double percent = cpuCounter.NextValue();
             int usage = Convert.ToInt32(percent);
             trackPath.Add(usage);
-            gcpCpuUsage.Value = usage;
+            trkCpu.Text = string.Format("{0:F1}%",percent);
         }
     }
 }

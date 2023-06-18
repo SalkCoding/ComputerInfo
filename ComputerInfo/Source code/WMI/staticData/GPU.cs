@@ -1,5 +1,4 @@
-﻿using System;
-using ComputerInfo.Define;
+﻿using ComputerInfo.Define;
 using System.Management;
 using System.Collections.Generic;
 

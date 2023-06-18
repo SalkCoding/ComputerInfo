@@ -17,7 +17,6 @@ namespace ComputerInfo.WMI
             internal static readonly string BiosVendor = "BIOSVendor";
             internal static readonly string SystemProductName = "SystemProductName";
             internal static readonly string SystemManufacturer = "SystemManufacturer";
-            internal static readonly string SystemVersion = "SystemVersion";
         }
 
         public Motherboard()
@@ -30,7 +29,6 @@ namespace ComputerInfo.WMI
             BiosVendor = RegistryReader.ReadRegistry(Registry.LocalMachine, Query.Root, Query.BiosVendor);
             SystemProductName = RegistryReader.ReadRegistry(Registry.LocalMachine, Query.Root, Query.SystemProductName);
             SystemManufacturer = RegistryReader.ReadRegistry(Registry.LocalMachine, Query.Root, Query.SystemManufacturer);
-            SystemVersion = RegistryReader.ReadRegistry(Registry.LocalMachine, Query.Root, Query.SystemVersion);
         }
 
         public string BaseManufacturer { get; private set; }

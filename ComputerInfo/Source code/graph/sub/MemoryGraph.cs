@@ -2,6 +2,7 @@
 using ComputerInfo.WMI;
 using GChartLib;
 using MetroSuite;
+using System.Drawing;
 
 namespace ComputerInfo.Graph
 {
@@ -9,44 +10,54 @@ namespace ComputerInfo.Graph
     {
         private readonly Memory memory;
 
-        private readonly MetroTracker trkMemory;
-        private readonly GCircularProgress gcpPhysicalMemoryUsage;
-        private readonly GCircularProgress gcpVirtualMemoryUsage;
-        private readonly MetroLabel lblPhysicalMemoryUsed;
-        private readonly MetroLabel lblVirtualMemoryUsed;
-        private readonly MetroTrackerPath trackerPath;
+        private readonly double physicalSize;
+        private readonly double virtualSize;
 
-        public MemoryGraph(Memory memory, MetroTracker trkMemory, GCircularProgress gcpPhysicalMemoryUsage, GCircularProgress gcpVirtualMemoryUsage, MetroLabel lblPhysicalMemoryUsed, MetroLabel lblVirtualMemoryUsed)
+        private readonly MetroTracker trkMemory;
+
+        private readonly MetroTrackerPath physicalPath;
+        private readonly MetroTrackerPath virtualPath;
+
+        public MemoryGraph(Memory memory, MetroTracker trkMemory)
         {
             this.memory = memory;
             this.trkMemory = trkMemory;
-            this.gcpPhysicalMemoryUsage = gcpPhysicalMemoryUsage;
-            this.gcpVirtualMemoryUsage = gcpVirtualMemoryUsage;
-            this.lblPhysicalMemoryUsed = lblPhysicalMemoryUsed;
-            this.lblVirtualMemoryUsed = lblVirtualMemoryUsed;
 
-            trackerPath = new MetroTrackerPath
+            physicalSize = (memory.PhysicalSize / Constants.GIGABYTE_DIVIDE_CONSTANTS);
+            virtualSize = (memory.VirtualSize / Constants.GIGABYTE_DIVIDE_CONSTANTS);
+
+            physicalPath = new MetroTrackerPath
             {
-                Name = "RAM",
-                Style = MetroTrackerPath.PathStyle.Memory
+                Name = "Physical memory",
+                Style = MetroTrackerPath.PathStyle.Memory,
+                LineWidth = 2
             };
 
-            trkMemory.Paths.Add(trackerPath);
+            virtualPath = new MetroTrackerPath
+            {
+                Name = "Virtual memory",
+                LineColor = Color.FromArgb(242, 184, 233),
+                LineWidth = 2,
+                FillColor = Color.FromArgb(199, 107, 184)
+            };
+
+            trkMemory.Paths.Add(physicalPath);
+            trkMemory.Paths.Add(virtualPath);
         }
 
         public void update()
         {
-            ulong physicalTotal = memory.PysicalSize;
+            ulong physicalTotal = memory.PhysicalSize;
             ulong physicalAvailable = memory.AvailablePhysicalSize;
             ulong virtualTotal = memory.VirtualSize;
             ulong virtualAvailable = memory.AvailableVirtualSize;
             double physicalPercentage = (physicalTotal - physicalAvailable) * 100 / physicalTotal;
             double virtualPercentage = (virtualTotal - virtualAvailable) * 100 / virtualTotal;
-            trackerPath.Add((int)physicalPercentage);
-            gcpPhysicalMemoryUsage.Value = (int)physicalPercentage;
-            gcpVirtualMemoryUsage.Value = (int)virtualPercentage;
-            lblPhysicalMemoryUsed.Text = string.Format("{0:F2} GB in use", (physicalTotal - physicalAvailable) / Constants.GIGABYTE_DIVIDE_CONSTANTS);
-            lblVirtualMemoryUsed.Text = string.Format("{0:F2} GB in use", (virtualTotal - virtualAvailable) / Constants.GIGABYTE_DIVIDE_CONSTANTS);
+            physicalPath.Add((int)physicalPercentage);
+            virtualPath.Add((int)virtualPercentage);
+            trkMemory.Text = string.Format("{0:F2}/{1:F2} GB in use\n{2:F2}/{3:F2} GB in use",
+                (physicalTotal - physicalAvailable) / Constants.GIGABYTE_DIVIDE_CONSTANTS, physicalSize,
+                (virtualTotal - virtualAvailable) / Constants.GIGABYTE_DIVIDE_CONSTANTS, virtualSize);
         }
     }
 }

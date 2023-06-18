@@ -149,6 +149,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <Content Include="Resources\AMD.png" />
+    <Content Include="Resources\ASROCK.png" />
+    <Content Include="Resources\ASUS.png" />
+    <Content Include="Resources\BIOSTAR.png" />
+    <Content Include="Resources\DELL.png" />
+    <Content Include="Resources\GIGABYTE.png" />
+    <Content Include="Resources\HP.png" />
+    <Content Include="Resources\INTEL.png" />
+    <Content Include="Resources\MSI.png" />
+    <Content Include="Resources\NVIDIA.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -162,8 +172,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\picture\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

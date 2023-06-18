@@ -1,6 +1,7 @@
 ﻿using ComputerInfo.Define;
 using ComputerInfo.Source_code.tabPage;
 using ComputerInfo.WMI;
+using GChartLib;
 using MetroSuite;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,6 @@ namespace ComputerInfo.TabPage
         private static readonly int DISK_MAX_COUNT = 6;
         public void update()
         {
-            return;
             for (int i = DISK_MAX_COUNT; i > storage.VolumeCount; i--)
             {
                 for (int j = (i * 2) - 1; j > (i * 2) - 2; j--)
@@ -40,7 +40,11 @@ namespace ComputerInfo.TabPage
             {
                 labelList[i * 2].Text = driver[i].Name;
                 if (driver[i].IsReady)
-                    labelList[(i * 2) + 1].Text = string.Format("{0:F2} GB / {1:F2} GB", (driver[i].TotalFreeSpace / Constants.GIGABYTE_DIVIDE_CONSTANTS), (driver[i].TotalSize / Constants.GIGABYTE_DIVIDE_CONSTANTS));
+                {
+                    double freeSpace = driver[i].TotalFreeSpace / Constants.GIGABYTE_DIVIDE_CONSTANTS;
+                    double totalSize = driver[i].TotalSize / Constants.GIGABYTE_DIVIDE_CONSTANTS;
+                    labelList[(i * 2) + 1].Text = string.Format("{0:F2} GB / {1:F2} GB", freeSpace, totalSize);
+                }
                 else
                     labelList[(i * 2) + 1].Text = "Volume is not ready";
             }

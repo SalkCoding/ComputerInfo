@@ -37,7 +37,7 @@ namespace ComputerInfo.WMI
                 LastBootUpTime = wmi[Query.LastBootUpTime].ToString();
                 CountryCode = wmi[Query.CountryCode].ToString();
                 CurrentTimeZone = wmi[Query.CurrentTimeZone].ToString();
-                MUILanguages = string.Join(", ", wmi[Query.MUILanguages]);
+                MUILanguages = string.Join(", ", (string[])wmi[Query.MUILanguages]);
                 Language = wmi[Query.Language].ToString();
                 InstallTime = ManagementDateTimeConverter.ToDateTime(wmi[Query.InstallDate].ToString());
             }

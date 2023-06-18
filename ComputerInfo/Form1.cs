@@ -1,12 +1,13 @@
 ﻿using System;
 using ComputerInfo.Graph;
 using MetroSuite;
-using System.Threading;
 using System.ComponentModel;
 using ComputerInfo.WMI;
 using ComputerInfo.Source_code.tabPage;
 using ComputerInfo.TabPage;
 using GChartLib;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ComputerInfo
 {
@@ -16,10 +17,10 @@ namespace ComputerInfo
         private ITabPage[] tabPageArr;
         private IGraph[] graphArr;
         //Graph
-        private readonly CPUGraph cpuGraph;
-        private readonly MemoryGraph memoryGraph;
+        private CPUGraph cpuGraph;
+        private MemoryGraph memoryGraph;
         //DO NOT put in graphArr
-        private readonly StorageGraph storageGraph;
+        private StorageGraph storageGraph;
         //Auto refresh
         private MetroComboBox[] comboBoxList;
         private MetroSwitch[] switchList;
@@ -33,26 +34,12 @@ namespace ComputerInfo
         //Dialog
         private DetailDiskInfo diskDialog;
 
-        private readonly bool DEBUG = true;
-
         public Form1()
         {
             InitializeComponent();
 
-            if (DEBUG) return;
-
-            cpuGraph = new CPUGraph(
-                trkCpu,
-                gcpCpuUsage
-                );
-            memoryGraph = new MemoryGraph(
-                memory,
-                trkMemory,
-                gcpPhysicalMemoryUsage,
-                gcpPhysicalMemoryUsage,
-                lblPhysicalMemoryUsed,
-                lblVirtualMemoryUsed
-                );
+            picGpu.SizeMode = PictureBoxSizeMode.Zoom;
+            picMotherboard.SizeMode = PictureBoxSizeMode.StretchImage;
 
             //Auto refresh
             comboBoxList = new MetroComboBox[] { cboCpuRefreshSpeed, cboMemoryRefreshSpeed };
@@ -72,8 +59,17 @@ namespace ComputerInfo
             storage = new Storage();
             gpu = new GPU();
             os = new OS();
+        }
 
-            #region Arrays initializaion
+        private void BackgroundWorker_InitCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            cpuGraph = new CPUGraph(trkCpu);
+            memoryGraph = new MemoryGraph(memory, trkMemory);
+            storageGraph = new StorageGraph(storage, new GCircularProgress[]
+            {
+                gcpCUsage, gcpDUsage, gcpEUsage, gcpFUsage, gcpGUsage, gcpHUsage
+            });
+            graphArr = new IGraph[] { cpuGraph, memoryGraph };
             tabPageArr = new ITabPage[] {
                 new CPUTabPage(
                     cpu,lblCpuName,
@@ -90,11 +86,19 @@ namespace ComputerInfo
                     lblMemorySpeed,
                     lblMemoryVoltage,
                     lblMemoryPhysicalSize,
-                    lblVirtualMemorySize
+                    lblVirtualMemorySize,
+                    lblMemorySummary
                     ),
                 new StorageTabPage(
                     storage,
-                    null//TODO array needed
+                    new MetroLabel[]{
+                        lblDiskCCaption,lblDiskCStatus,
+                        lblDiskDCaption,lblDiskDStatus,
+                        lblDiskECaption,lblDiskEStatus,
+                        lblDiskFCaption,lblDiskFStatus,
+                        lblDiskGCaption,lblDiskGStatus,
+                        lblDiskHCaption,lblDiskHStatus
+                    }
                     ),
                 new GPUTabPage(
                     gpu,
@@ -107,7 +111,8 @@ namespace ComputerInfo
                     lblMonitorMinRefreshRate,
                     lblMonitorCurrentResolution,
                     lblGpuDriverVersion,
-                    lblGpuDriverDate
+                    lblGpuDriverDate,
+                    picGpu
                     ),
                 new MotherBoardTabPage(
                     motherboard,
@@ -119,7 +124,7 @@ namespace ComputerInfo
                     lblBiosVendor,
                     lblMotherboardSystemProductName,
                     lblMotherboardSystemManufacturer,
-                    lblMotherboardSystemVersion
+                    picMotherboard
                     ),
                 new OSTabPage(
                     os,
@@ -137,21 +142,22 @@ namespace ComputerInfo
                     )
             };
 
-            graphArr = new IGraph[] { cpuGraph, memoryGraph };
-            #endregion
-        }
+            foreach (ITabPage page in tabPageArr) page.update();
+            storageGraph.update();
 
-        private void BackgroundWorker_InitCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            foreach(ITabPage page in tabPageArr) page.update();
+            tmrGraphUpdater.Enabled = true;
+            tmrGraphUpdater.Start();
 
             Text = "Loading completed!";
-            Invalidate();
-
-            BackgroundWorker textRefresher = new BackgroundWorker();
-            textRefresher.DoWork += delegate { Thread.Sleep(3000); };
-            textRefresher.RunWorkerCompleted += delegate { Text = "Computer information"; Invalidate(); };
-            textRefresher.RunWorkerAsync();
+            Invalidate(false);
+            Task.Delay(3000).ContinueWith(t =>
+            {
+                Invoke(new MethodInvoker(delegate ()
+                {
+                    Text = "Computer information";
+                    Invalidate(false);
+                }));
+            });
         }
 
         void Refresh_Timer_Setting(int speed)

@@ -1,8 +1,10 @@
 ﻿using ComputerInfo.Define;
+using ComputerInfo.Properties;
 using ComputerInfo.Source_code.tabPage;
 using ComputerInfo.WMI;
 using MetroSuite;
 using System;
+using System.Windows.Forms;
 
 namespace ComputerInfo.TabPage
 {
@@ -21,6 +23,8 @@ namespace ComputerInfo.TabPage
         private readonly MetroLabel lblGpuDriverVersion;
         private readonly MetroLabel lblGpuDriverDate;
 
+        private readonly PictureBox picGpu;
+
         public GPUTabPage(
             GPU gpu,
             MetroLabel lblGpuManufacturer,
@@ -32,7 +36,8 @@ namespace ComputerInfo.TabPage
             MetroLabel lblMonitorMinRefreshRate,
             MetroLabel lblMonitorCurrentResolution,
             MetroLabel lblGpuDriverVersion,
-            MetroLabel lblGpuDriverDate
+            MetroLabel lblGpuDriverDate,
+            PictureBox picGpu
             )
         {
             this.gpu = gpu;
@@ -46,6 +51,7 @@ namespace ComputerInfo.TabPage
             this.lblMonitorCurrentResolution = lblMonitorCurrentResolution;
             this.lblGpuDriverVersion = lblGpuDriverVersion;
             this.lblGpuDriverDate = lblGpuDriverDate;
+            this.picGpu = picGpu;
         }
 
         public void update() 
@@ -61,6 +67,11 @@ namespace ComputerInfo.TabPage
             lblGpuDriverVersion.Text = gpu.DriverVersion;
             DateTime driverTime = DateTime.ParseExact(gpu.DriverDate, "yyyyMMddHHmmss", null);
             lblGpuDriverDate.Text = string.Format("{0}/{1}/{2}", driverTime.Month, driverTime.Day, driverTime.Year);
+
+            string caption = gpu.Caption.ToLower();
+            if (caption.Contains("amd")) picGpu.Image = Resources.AMD;
+            else if (caption.Contains("nvidia")) picGpu.Image = Resources.NVIDIA;
+            else if (caption.Contains("intel")) picGpu.Image = Resources.INTEL;
         }
     }
 }
