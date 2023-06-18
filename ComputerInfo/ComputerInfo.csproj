@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ComputerInfo</RootNamespace>
     <AssemblyName>ComputerInfo</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -82,33 +82,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Define\WMIQuery.cs" />
+    <Compile Include="Source code\graph\IGraph.cs" />
+    <Compile Include="Source code\tabPage\sub\CPUTabPage.cs" />
+    <Compile Include="Source code\tabPage\sub\GPUTabPage.cs" />
+    <Compile Include="Source code\tabPage\sub\MotherBoardTabPage.cs" />
+    <Compile Include="Source code\tabPage\sub\OSTabPage.cs" />
+    <Compile Include="Source code\tabPage\sub\MemoryTabPage.cs" />
+    <Compile Include="Source code\tabPage\sub\StorageTabPage.cs" />
+    <Compile Include="Source code\tabPage\ITabPage.cs" />
+    <Compile Include="Source code\WMI\WMIQuery.cs" />
     <Compile Include="DetailDiskInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DetailDiskInfo.Designer.cs">
       <DependentUpon>DetailDiskInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Graph\CPUGraph.cs" />
-    <Compile Include="Define\Constants.cs" />
-    <Compile Include="Define\Untill.cs" />
+    <Compile Include="Source code\graph\sub\CPUGraph.cs" />
+    <Compile Include="Source code\util\Constants.cs" />
+    <Compile Include="Source code\util\RegistryReader.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Graph\Disk_Graph.cs" />
-    <Compile Include="Graph\RAMGraph.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Source code\graph\sub\StroageGraph.cs" />
+    <Compile Include="Source code\graph\sub\MemoryGraph.cs" />
+    <Compile Include="Source code\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WMI\Bios.cs" />
-    <Compile Include="WMI\CPU.cs" />
-    <Compile Include="WMI\DetailDisk.cs" />
-    <Compile Include="WMI\Disk.cs" />
-    <Compile Include="WMI\GPU.cs" />
-    <Compile Include="WMI\RAM.cs" />
-    <Compile Include="WMI\OS.cs" />
+    <Compile Include="Source code\WMI\staticData\Motherboard.cs" />
+    <Compile Include="Source code\WMI\staticData\CPU.cs" />
+    <Compile Include="Source code\WMI\staticData\DetailStorage.cs" />
+    <Compile Include="Source code\WMI\staticData\Storage.cs" />
+    <Compile Include="Source code\WMI\staticData\GPU.cs" />
+    <Compile Include="Source code\WMI\staticData\Memory.cs" />
+    <Compile Include="Source code\WMI\staticData\OS.cs" />
     <EmbeddedResource Include="DetailDiskInfo.resx">
       <DependentUpon>DetailDiskInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +149,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <Content Include="Resources\AMD.png" />
+    <Content Include="Resources\ASROCK.png" />
+    <Content Include="Resources\ASUS.png" />
+    <Content Include="Resources\BIOSTAR.png" />
+    <Content Include="Resources\DELL.png" />
+    <Content Include="Resources\GIGABYTE.png" />
+    <Content Include="Resources\HP.png" />
+    <Content Include="Resources\INTEL.png" />
+    <Content Include="Resources\MSI.png" />
+    <Content Include="Resources\NVIDIA.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -154,5 +172,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
