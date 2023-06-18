@@ -13,10 +13,9 @@ Control skins
   http://www.vb-paradise.de/index.php/Thread/118123-GChartLib-Pr%C3%A4sentiert-Daten-auf-eine-neue-moderne-Art/#59da2a65195c6_1
   
 ![cpu](./screenshot/cpu.png)
-![motherboard](./screenshot/motherboard.png)
 ![ram](./screenshot/ram.png)
 ![storage](./screenshot/storage.png)
 ![detailstorage](./screenshot/detailstorage.png)
 ![gpu](./screenshot/gpu.png)
+![motherboard](./screenshot/motherboard.png)
 ![os](./screenshot/os.png)
-![summary](./screenshot/summary.png)
