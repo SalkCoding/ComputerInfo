@@ -3,6 +3,13 @@ Get your computer's hardware information with C#
 
 This program will get various hardware data from your PC and display it with a modern, intuitive interface.
 
+## 📋 Quick Links
+
+- 🚀 **[Installation Steps (Beginner-Friendly)](./INSTALLATION_STEPS.md)** - Visual step-by-step guide
+- 📦 **[Dependency Guide (English)](./DEPENDENCY_GUIDE.md)** - Detailed dependency information
+- 📦 **[의존성 가이드 (한국어)](./DEPENDENCY_GUIDE_KR.md)** - 한국어 의존성 정보
+- 🔍 **[Dependency Checker](./check-dependencies.bat)** - Run this to check your setup
+
 ## Features
 
 - 📊 **CPU Monitoring**: Real-time CPU usage, clock speed, voltage, and cache information
@@ -36,7 +43,9 @@ cd ComputerInfo
 1. **GChartLib** - Chart visualization library
 2. **MetroSuite 2.0** - Modern Windows 8 style controls
 
-**Detailed instructions for obtaining these dependencies can be found in [DEPENDENCY_GUIDE.md](./DEPENDENCY_GUIDE.md)**
+**📖 For detailed step-by-step instructions with visual guidance, see [INSTALLATION_STEPS.md](./INSTALLATION_STEPS.md)**
+
+**📚 For comprehensive dependency information, see [DEPENDENCY_GUIDE.md](./DEPENDENCY_GUIDE.md) ([한국어 버전](./DEPENDENCY_GUIDE_KR.md))**
 
 #### Quick Summary:
 
